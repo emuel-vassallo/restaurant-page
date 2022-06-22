@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  background-color: #f0f0f0;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-links {
+  list-style-type: none;
+  display: flex;
+  gap: 54px;
+  margin: 0;
+  padding: 0;
+}
+
+.header-links a {
+  text-decoration: none;
+  color: black;
+}
