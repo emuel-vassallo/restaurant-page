@@ -23,3 +23,27 @@ header {
   text-decoration: none;
   color: black;
 }
+
+main {
+  padding: 54px;
+}
+
+.headline {
+  font-size: 4rem;
+}
+
+.hero p {
+  font-size: 1rem;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  gap: 54px;
+}
+
+.hero-image {
+  width: 450px;
+  height: auto;
+}
+
