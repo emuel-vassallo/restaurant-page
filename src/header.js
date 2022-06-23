@@ -1,6 +1,6 @@
 export const loadHeader = () => {
   const headerContainer = document.querySelector('header');
-  const headerLinks = document.createElement('ul');
+  const tabLinks = document.createElement('ul');
 
   const homeLinkListItem = document.createElement('li');
   const menuLinkListItem = document.createElement('li');
@@ -10,7 +10,7 @@ export const loadHeader = () => {
   const menuLink = document.createElement('a');
   const contactLink = document.createElement('a');
 
-  headerLinks.classList.add('header-links');
+  tabLinks.classList.add('tab-links');
 
   homeLink.setAttribute('href', '#');
   menuLink.setAttribute('href', '#');
@@ -24,6 +24,10 @@ export const loadHeader = () => {
   menuLinkListItem.append(menuLink);
   contactLinkListItem.append(contactLink);
 
-  headerLinks.append(homeLinkListItem, menuLinkListItem, contactLinkListItem);
-  headerContainer.append(headerLinks);
+  tabLinks.append(
+    homeLinkListItem,
+    menuLinkListItem,
+    contactLinkListItem
+  );
+  headerContainer.append(tabLinks);
 };

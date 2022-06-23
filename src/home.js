@@ -1,5 +1,5 @@
 export const loadHomePage = () => {
-  const contentParent = document.querySelector('#content');
+  const contentDiv = document.querySelector('#content');
 
   const mainContainer = document.createElement('main');
   const heroContainer = document.createElement('div');
@@ -22,5 +22,5 @@ export const loadHomePage = () => {
   heroTextContainer.append(headline, heroParagraph);
   heroContainer.append(heroTextContainer, heroImage);
   mainContainer.append(heroContainer);
-  contentParent.append(mainContainer);
+  contentDiv.append(mainContainer);
 };
