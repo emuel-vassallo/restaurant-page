@@ -28,22 +28,26 @@ main {
   padding: 54px;
 }
 
+.hero {
+  display: flex;
+  justify-content: space-between;
+  gap: 54px;
+  width: 100%;
+}
+
+.hero-text {
+  width: 90%;
+}
+
 .headline {
-  font-size: 4rem;
+  font-size: 5rem;
 }
 
 .hero p {
   font-size: 1rem;
 }
 
-.hero {
-  display: flex;
-  justify-content: space-between;
-  gap: 54px;
-}
-
 .hero-image {
-  width: 450px;
-  height: auto;
+  width: 100%;
+  max-height: 800px;
 }
-
