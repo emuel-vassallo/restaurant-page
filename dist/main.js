@@ -7,26 +7,90 @@
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
+
+/***/ "./src/home.js":
+/*!*********************!*\
+  !*** ./src/home.js ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"initialPageLoad\": () => (/* binding */ initialPageLoad)\n/* harmony export */ });\nconst initialPageLoad = () => {\n  const contentParent = document.querySelector('#content');\n\n  // -- Header --\n  const headerContainer = document.createElement('header');\n\n  // Unordered List\n  const headerLinks = document.createElement('ul');\n\n  // List Items\n  const homeLinkListItem = document.createElement('li');\n  const menuLinkListItem = document.createElement('li');\n  const contactLinkListItem = document.createElement('li');\n\n  // Hyperlinks\n  const homeLink = document.createElement('a');\n  const menuLink = document.createElement('a');\n  const contactLink = document.createElement('a');\n\n  headerLinks.classList.add('header-links');\n\n  homeLink.setAttribute('href', '#');\n  menuLink.setAttribute('href', '#');\n  contactLink.setAttribute('href', '#');\n\n  homeLink.textContent = 'Home';\n  menuLink.textContent = 'Menu';\n  contactLink.textContent = 'Contact';\n\n  homeLinkListItem.append(homeLink);\n  menuLinkListItem.append(menuLink);\n  contactLinkListItem.append(contactLink);\n\n  headerLinks.append(homeLinkListItem, menuLinkListItem, contactLinkListItem);\n\n  headerContainer.append(headerLinks);\n\n  // -- Main --\n  const mainContainer = document.createElement('main');\n  const heroContainer = document.createElement('div');\n  const heroTextContainer = document.createElement('div');\n  const heroImage = document.createElement('img');\n  const headline = document.createElement('h1');\n  const heroParagraph = document.createElement('p');\n\n  heroContainer.classList.add('hero');\n  heroTextContainer.classList.add('hero-text');\n  heroImage.classList.add('hero-image');\n  headline.classList.add('headline');\n\n  headline.textContent = 'Enoy delicious and healthy food.';\n  heroParagraph.textContent =\n    ' We provide the most delicious food based on high quality ingredients that are maintained by high tech machines and cooked by our experts.';\n\n  heroImage.setAttribute('src', '../src/components/image1.jpg');\n\n  heroTextContainer.append(headline, heroParagraph);\n  heroContainer.append(heroTextContainer, heroImage);\n  mainContainer.append(heroContainer);\n  contentParent.append(headerContainer, mainContainer);\n};\n\n\n//# sourceURL=webpack://restaurant-page/./src/home.js?");
+
+/***/ }),
 
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("const contentParent = document.querySelector('#content');\n\n// Header\nconst header = document.createElement('header');\n\n// Unordered List\nconst headerLinks = document.createElement('ul');\n\n// List Items\nconst homeLinkListItem = document.createElement('li');\nconst menuLinkListItem = document.createElement('li');\nconst contactLinkListItem = document.createElement('li');\n\n// Hyperlinks\nconst homeLink = document.createElement('a');\nconst menuLink = document.createElement('a');\nconst contactLink = document.createElement('a');\n\nheaderLinks.classList.add('header-links');\n\nhomeLink.setAttribute('href', '#');\nmenuLink.setAttribute('href', '#');\ncontactLink.setAttribute('href', '#');\n\nhomeLink.textContent = 'Home';\nmenuLink.textContent = 'Menu';\ncontactLink.textContent = 'Contact';\n\nhomeLinkListItem.append(homeLink);\nmenuLinkListItem.append(menuLink);\ncontactLinkListItem.append(contactLink);\n\nheaderLinks.append(homeLinkListItem, menuLinkListItem, contactLinkListItem);\nheader.append(headerLinks);\n\ncontentParent.appendChild(header);\n\n\n//# sourceURL=webpack://restaurant-page/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _home_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./home.js */ \"./src/home.js\");\n\n\n(0,_home_js__WEBPACK_IMPORTED_MODULE_0__.initialPageLoad)()\n\n\n//# sourceURL=webpack://restaurant-page/./src/index.js?");
 
 /***/ })
 
 /******/ 	});
 /************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = {};
-/******/ 	__webpack_modules__["./src/index.js"]();
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/index.js");
 /******/ 	
 /******/ })()
 ;
