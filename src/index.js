@@ -1,3 +1,5 @@
-import {initialPageLoad} from './home.js'
+import { loadHeader } from './header.js';
+import { loadHomePage } from './home.js';
 
-initialPageLoad()
+loadHeader();
+loadHomePage();
