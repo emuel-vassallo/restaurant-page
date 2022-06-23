@@ -10,13 +10,23 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/header.js":
+/*!***********************!*\
+  !*** ./src/header.js ***!
+  \***********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"loadHeader\": () => (/* binding */ loadHeader)\n/* harmony export */ });\nconst loadHeader = () => {\n  const headerContainer = document.querySelector('header');\n  const headerLinks = document.createElement('ul');\n\n  const homeLinkListItem = document.createElement('li');\n  const menuLinkListItem = document.createElement('li');\n  const contactLinkListItem = document.createElement('li');\n\n  const homeLink = document.createElement('a');\n  const menuLink = document.createElement('a');\n  const contactLink = document.createElement('a');\n\n  headerLinks.classList.add('header-links');\n\n  homeLink.setAttribute('href', '#');\n  menuLink.setAttribute('href', '#');\n  contactLink.setAttribute('href', '#');\n\n  homeLink.textContent = 'Home';\n  menuLink.textContent = 'Menu';\n  contactLink.textContent = 'Contact';\n\n  homeLinkListItem.append(homeLink);\n  menuLinkListItem.append(menuLink);\n  contactLinkListItem.append(contactLink);\n\n  headerLinks.append(homeLinkListItem, menuLinkListItem, contactLinkListItem);\n  headerContainer.append(headerLinks);\n};\n\n\n//# sourceURL=webpack://restaurant-page/./src/header.js?");
+
+/***/ }),
+
 /***/ "./src/home.js":
 /*!*********************!*\
   !*** ./src/home.js ***!
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"initialPageLoad\": () => (/* binding */ initialPageLoad)\n/* harmony export */ });\nconst initialPageLoad = () => {\n  const contentParent = document.querySelector('#content');\n\n  // -- Header --\n  const headerContainer = document.createElement('header');\n\n  // Unordered List\n  const headerLinks = document.createElement('ul');\n\n  // List Items\n  const homeLinkListItem = document.createElement('li');\n  const menuLinkListItem = document.createElement('li');\n  const contactLinkListItem = document.createElement('li');\n\n  // Hyperlinks\n  const homeLink = document.createElement('a');\n  const menuLink = document.createElement('a');\n  const contactLink = document.createElement('a');\n\n  headerLinks.classList.add('header-links');\n\n  homeLink.setAttribute('href', '#');\n  menuLink.setAttribute('href', '#');\n  contactLink.setAttribute('href', '#');\n\n  homeLink.textContent = 'Home';\n  menuLink.textContent = 'Menu';\n  contactLink.textContent = 'Contact';\n\n  homeLinkListItem.append(homeLink);\n  menuLinkListItem.append(menuLink);\n  contactLinkListItem.append(contactLink);\n\n  headerLinks.append(homeLinkListItem, menuLinkListItem, contactLinkListItem);\n\n  headerContainer.append(headerLinks);\n\n  // -- Main --\n  const mainContainer = document.createElement('main');\n  const heroContainer = document.createElement('div');\n  const heroTextContainer = document.createElement('div');\n  const heroImage = document.createElement('img');\n  const headline = document.createElement('h1');\n  const heroParagraph = document.createElement('p');\n\n  heroContainer.classList.add('hero');\n  heroTextContainer.classList.add('hero-text');\n  heroImage.classList.add('hero-image');\n  headline.classList.add('headline');\n\n  headline.textContent = 'Enoy delicious and healthy food.';\n  heroParagraph.textContent =\n    ' We provide the most delicious food based on high quality ingredients that are maintained by high tech machines and cooked by our experts.';\n\n  heroImage.setAttribute('src', '../src/components/image1.jpg');\n\n  heroTextContainer.append(headline, heroParagraph);\n  heroContainer.append(heroTextContainer, heroImage);\n  mainContainer.append(heroContainer);\n  contentParent.append(headerContainer, mainContainer);\n};\n\n\n//# sourceURL=webpack://restaurant-page/./src/home.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"loadHomePage\": () => (/* binding */ loadHomePage)\n/* harmony export */ });\nconst loadHomePage = () => {\n  const contentParent = document.querySelector('#content');\n\n  const mainContainer = document.createElement('main');\n  const heroContainer = document.createElement('div');\n  const heroTextContainer = document.createElement('div');\n  const heroImage = document.createElement('img');\n  const headline = document.createElement('h1');\n  const heroParagraph = document.createElement('p');\n\n  heroContainer.classList.add('hero');\n  heroTextContainer.classList.add('hero-text');\n  heroImage.classList.add('hero-image');\n  headline.classList.add('headline');\n\n  headline.textContent = 'Enjoy delicious and healthy food.';\n  heroParagraph.textContent =\n    ' We provide the most delicious food based on high quality ingredients that are maintained by high tech machines and cooked by our experts.';\n\n  heroImage.setAttribute('src', '../src/components/image1.jpg');\n\n  heroTextContainer.append(headline, heroParagraph);\n  heroContainer.append(heroTextContainer, heroImage);\n  mainContainer.append(heroContainer);\n  contentParent.append(mainContainer);\n};\n\n\n//# sourceURL=webpack://restaurant-page/./src/home.js?");
 
 /***/ }),
 
@@ -26,7 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _home_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./home.js */ \"./src/home.js\");\n\n\n(0,_home_js__WEBPACK_IMPORTED_MODULE_0__.initialPageLoad)()\n\n\n//# sourceURL=webpack://restaurant-page/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _header_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./header.js */ \"./src/header.js\");\n/* harmony import */ var _home_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./home.js */ \"./src/home.js\");\n\n\n\n(0,_header_js__WEBPACK_IMPORTED_MODULE_0__.loadHeader)();\n(0,_home_js__WEBPACK_IMPORTED_MODULE_1__.loadHomePage)();\n\n\n//# sourceURL=webpack://restaurant-page/./src/index.js?");
 
 /***/ })
 
