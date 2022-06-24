@@ -23,8 +23,10 @@ export const loadHeader = () => {
   rightElementsContainer.classList.add('header-right-elements');
   logo.classList.add('header-logo');
   tabLinks.classList.add('tab-links');
-  homeLink.classList.add('selected-tab')
-  orderNowButton.classList.add('header-order-now-button');
+  homeLink.classList.add('selected-tab');
+  searchIcon.classList.add('header-icon')
+  cartIcon.classList.add('header-icon')
+  orderNowButton.classList.add('order-now-button');
   searchIcon.setAttribute('src', '../src/components/search.svg');
   cartIcon.setAttribute('src', '../src/components/shopping-cart.svg');
 
