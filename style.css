@@ -67,7 +67,7 @@ header {
 
 .tab-links a:hover {
   cursor: pointer;
-  font-weight: 600;
+  color: #464646;
 }
 
 .selected-tab {
@@ -91,6 +91,11 @@ header {
   border-radius: 26px;
   font-weight: 600;
   text-transform: capitalize;
+  transition: all 0.3s ease-in-out;
+}
+
+.order-now-button:hover {
+  transition: all 0.3s ease-in-out;
 }
 
 .header-right-elements * {
@@ -130,7 +135,6 @@ header {
 .hero-text p {
   margin: 0;
   font-size: 1.2rem;
-  font-family: 'Inter', sans-serif;
   animation: 0.8s ease-in-out 0s 1 slideInFromLeftDescription;
 }
 
@@ -201,7 +205,7 @@ header {
 
 @keyframes slideInFromLeftButton {
   0% {
-    transform: translateX(-80%);
+    transform: translateX(-90%);
   }
   100% {
     transform: translateX(0);
