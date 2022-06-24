@@ -10,6 +10,16 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/contact.js":
+/*!************************!*\
+  !*** ./src/contact.js ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"loadContactPage\": () => (/* binding */ loadContactPage)\n/* harmony export */ });\nconst loadContactPage = () => {\n  const contentDiv = document.querySelector('#content');\n  contentDiv.textContent = 'Contact';\n};\n\n\n//# sourceURL=webpack://restaurant-page/./src/contact.js?");
+
+/***/ }),
+
 /***/ "./src/header.js":
 /*!***********************!*\
   !*** ./src/header.js ***!
@@ -26,7 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"loadHomePage\": () => (/* binding */ loadHomePage)\n/* harmony export */ });\nconst loadHomePage = () => {\n  const contentDiv = document.querySelector('#content');\n\n  const mainContainer = document.createElement('main');\n  const heroContainer = document.createElement('div');\n  const heroTextContainer = document.createElement('div');\n  const heroImage = document.createElement('img');\n  const headline = document.createElement('h1');\n  const heroParagraph = document.createElement('p');\n\n  heroContainer.classList.add('hero');\n  heroTextContainer.classList.add('hero-text');\n  heroImage.classList.add('hero-image');\n  headline.classList.add('headline');\n\n  headline.textContent = 'Enjoy delicious and healthy food.';\n  heroParagraph.textContent =\n    ' We provide the most delicious food based on high quality ingredients that are maintained by high tech machines and cooked by our experts.';\n\n  heroImage.setAttribute('src', '../src/components/image1.jpg');\n\n  heroTextContainer.append(headline, heroParagraph);\n  heroContainer.append(heroTextContainer, heroImage);\n  mainContainer.append(heroContainer);\n  contentDiv.append(mainContainer);\n};\n\n\n//# sourceURL=webpack://restaurant-page/./src/home.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"loadHomePage\": () => (/* binding */ loadHomePage)\n/* harmony export */ });\nconst loadHomePage = () => {\n  const contentDiv = document.querySelector('#content');\n\n  const heroContainer = document.createElement('div');\n  const heroTextContainer = document.createElement('div');\n  const heroImage = document.createElement('img');\n  const headline = document.createElement('h1');\n  const heroParagraph = document.createElement('p');\n\n  heroContainer.classList.add('hero');\n  heroTextContainer.classList.add('hero-text');\n  heroImage.classList.add('hero-image');\n  headline.classList.add('headline');\n\n  headline.textContent = 'Enjoy delicious and healthy food.';\n  heroParagraph.textContent =\n    ' We provide the most delicious food based on high quality ingredients that are maintained by high tech machines and cooked by our experts.';\n\n  heroImage.setAttribute('src', '../src/components/image1.jpg');\n\n  heroTextContainer.append(headline, heroParagraph);\n  heroContainer.append(heroTextContainer, heroImage);\n  contentDiv.append(heroContainer);\n};\n\n\n//# sourceURL=webpack://restaurant-page/./src/home.js?");
 
 /***/ }),
 
@@ -36,7 +46,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _header_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./header.js */ \"./src/header.js\");\n/* harmony import */ var _home_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./home.js */ \"./src/home.js\");\n\n\n\n(0,_header_js__WEBPACK_IMPORTED_MODULE_0__.loadHeader)();\n\nconst emptyContentDiv = () => {\n  const contentDiv = document.querySelector('#content');\n\n  while (contentDiv.firstChild) {\n    contentDiv.removeChild(contentDiv.lastChild);\n  }\n};\n\nconst switchTab = () => {\n  const headerTabLinks = document.querySelectorAll('.tab-links li a');\n  for (const link of headerTabLinks) {\n    link.addEventListener('click', () => {\n      emptyContentDiv();\n    });\n  }\n};\n\nswitchTab();\n(0,_home_js__WEBPACK_IMPORTED_MODULE_1__.loadHomePage)();\n\n\n//# sourceURL=webpack://restaurant-page/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _header_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./header.js */ \"./src/header.js\");\n/* harmony import */ var _home_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./home.js */ \"./src/home.js\");\n/* harmony import */ var _menu_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./menu.js */ \"./src/menu.js\");\n/* harmony import */ var _contact_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./contact.js */ \"./src/contact.js\");\n\n\n\n\n\nconst emptyContentDiv = () => {\n  const contentDiv = document.querySelector('#content');\n  while (contentDiv.firstChild) {\n    contentDiv.removeChild(contentDiv.lastChild);\n  }\n};\n\nconst changeTabContent = (tabName) => {\n  if (tabName === 'Home') (0,_home_js__WEBPACK_IMPORTED_MODULE_1__.loadHomePage)();\n  if (tabName === 'Menu') (0,_menu_js__WEBPACK_IMPORTED_MODULE_2__.loadMenuPage)();\n  if (tabName === 'Contact') (0,_contact_js__WEBPACK_IMPORTED_MODULE_3__.loadContactPage)();\n};\n\nconst switchTab = () => {\n  const headerTabLinks = document.querySelectorAll('.tab-links li a');\n  for (const link of headerTabLinks) {\n    link.addEventListener('click', () => {\n      emptyContentDiv();\n      changeTabContent(link.textContent);\n    });\n  }\n};\n\n(0,_header_js__WEBPACK_IMPORTED_MODULE_0__.loadHeader)();\n(0,_home_js__WEBPACK_IMPORTED_MODULE_1__.loadHomePage)();\nswitchTab();\n\n\n//# sourceURL=webpack://restaurant-page/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/menu.js":
+/*!*********************!*\
+  !*** ./src/menu.js ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"loadMenuPage\": () => (/* binding */ loadMenuPage)\n/* harmony export */ });\nconst loadMenuPage = () => {\n  const contentDiv = document.querySelector('#content');\n  contentDiv.textContent = 'Menu';\n};\n\n\n//# sourceURL=webpack://restaurant-page/./src/menu.js?");
 
 /***/ })
 
