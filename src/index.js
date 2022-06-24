@@ -10,11 +10,12 @@ const emptyContentDiv = () => {
   }
 };
 
-const changeTabContent = (tabName) => {
-  if (tabName === 'Home') loadHomePage();
-  if (tabName === 'Menu') loadMenuPage();
-  if (tabName === 'Contact') loadContactPage();
-};
+const changeTabContent = (tabName) =>
+  ({
+    Home: loadHomePage,
+    Menu: loadMenuPage,
+    Contact: loadContactPage,
+  }[tabName]?.());
 
 const switchTab = () => {
   const headerTabLinks = document.querySelectorAll('.tab-links li a');
