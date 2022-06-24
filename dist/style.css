@@ -24,15 +24,12 @@ header {
   color: black;
 }
 
-main {
-  padding: 54px;
-}
-
 .hero {
   display: flex;
   justify-content: space-between;
   gap: 54px;
   width: 100%;
+  padding: 54px;
 }
 
 .hero-text {

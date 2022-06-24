@@ -1,7 +1,6 @@
 export const loadHomePage = () => {
   const contentDiv = document.querySelector('#content');
 
-  const mainContainer = document.createElement('main');
   const heroContainer = document.createElement('div');
   const heroTextContainer = document.createElement('div');
   const heroImage = document.createElement('img');
@@ -21,6 +20,5 @@ export const loadHomePage = () => {
 
   heroTextContainer.append(headline, heroParagraph);
   heroContainer.append(heroTextContainer, heroImage);
-  mainContainer.append(heroContainer);
-  contentDiv.append(mainContainer);
+  contentDiv.append(heroContainer);
 };
