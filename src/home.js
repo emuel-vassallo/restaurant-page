@@ -12,11 +12,11 @@ export const loadHomePage = () => {
   heroImage.classList.add('hero-image');
   headline.classList.add('headline');
 
-  headline.textContent = 'Enjoy delicious and healthy food.';
+  headline.textContent = 'The healthiest and most delicious salads in town.';
   heroParagraph.textContent =
     ' We provide the most delicious food based on high quality ingredients that are maintained by high tech machines and cooked by our experts.';
 
-  heroImage.setAttribute('src', '../src/components/image1.jpg');
+  heroImage.setAttribute('src', '../src/components/hero-image.png');
 
   heroTextContainer.append(headline, heroParagraph);
   heroContainer.append(heroTextContainer, heroImage);

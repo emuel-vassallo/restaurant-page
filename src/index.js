@@ -10,11 +10,11 @@ const emptyContentDiv = () => {
   }
 };
 
-const changeTabContent = (tabName) =>
+const loadPage = (tabName) =>
   ({
-    Home: loadHomePage,
-    Menu: loadMenuPage,
-    Contact: loadContactPage,
+    home: loadHomePage,
+    menu: loadMenuPage,
+    contact: loadContactPage,
   }[tabName]?.());
 
 const switchTab = () => {
@@ -22,7 +22,7 @@ const switchTab = () => {
   for (const link of headerTabLinks) {
     link.addEventListener('click', () => {
       emptyContentDiv();
-      changeTabContent(link.textContent);
+      loadPage(link.textContent);
     });
   }
 };
