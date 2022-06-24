@@ -25,7 +25,8 @@ header {
   justify-content: space-between;
   height: 116px;
   padding: 16px 0;
-  animation: 1s ease-out 0s 1 slideInFromTop;
+  animation: 0.7s ease-in-out 0s 1 slideInFromTop;
+  gap: 16px;
 }
 
 /* Left Container */
@@ -80,7 +81,7 @@ header {
   gap: 36px;
 }
 
-.header-order-now-button {
+.order-now-button {
   width: 132px;
   height: 46px;
   font-size: 0.9rem;
@@ -89,11 +90,19 @@ header {
   border: none;
   border-radius: 26px;
   font-weight: 600;
-  text-transform: uppercase;
+  text-transform: capitalize;
+}
+
+.header-right-elements * {
+  transition: all 0.1s ease-in-out;
 }
 
 .header-right-elements *:hover {
   cursor: pointer;
+}
+
+.header-icon:hover {
+  fill: green;
 }
 
 /* -- Main -- */
@@ -102,15 +111,15 @@ header {
   display: flex;
   justify-content: space-between;
   gap: 54px;
+  align-items: center;
 }
 
 .hero-text {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 42px;
   padding: 36px 0;
-  width: 50%;
-  animation: 1.05s ease-out 0s 1 slideInFromLeft;
+  animation: 0.7s ease-in-out 0s 1 slideInFromLeft;
 }
 
 .headline {
@@ -125,11 +134,40 @@ header {
 }
 
 .hero-image {
-  width: 50%;
-  height: auto;
-  -webkit-filter: drop-shadow(3px 3px 14px #555);
-  filter: drop-shadow(3px 3px 14px #555);
-  animation: 0.8s ease-out 0s 1 slideInFromRight;
+  width: 60%;
+  max-width: 550px;
+  margin: 40px 0;
+  -webkit-filter: drop-shadow(3px 3px 16px #555);
+  filter: drop-shadow(0 0 16px #555);
+  animation: 0.5s ease-in-out 0s 1 slideInFromRight;
+}
+
+.hero-text .order-now-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 167px;
+  height: 48px;
+  text-align: left;
+  padding: 0 24px;
+  font-size: 0.98rem;
+}
+
+.order-now-button {
+  box-shadow: 0 0.5rem 1rem rgba(143, 142, 142, 0.15) !important;
+}
+
+.order-now-button:hover {
+  cursor: pointer;
+  background-color: #2b2a2a;
+}
+
+.hero-text .order-now-button > img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.hero-text .order-now-button:hover img {
+  transform: translateX(5px);
 }
 
 @keyframes slideInFromLeft {
