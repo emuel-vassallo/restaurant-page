@@ -17,12 +17,19 @@ const loadPage = (tabName) =>
     contact: loadContactPage,
   }[tabName]?.());
 
+const removeSelectedTabClass = () => {
+  const headerTabLinks = document.querySelectorAll('.tab-links li a');
+  for (const link of headerTabLinks) link.classList.remove('selected-tab');
+};
+
 const switchTab = () => {
   const headerTabLinks = document.querySelectorAll('.tab-links li a');
   for (const link of headerTabLinks) {
     link.addEventListener('click', () => {
       emptyContentDiv();
       loadPage(link.textContent);
+      removeSelectedTabClass();
+      link.classList.add('selected-tab');
     });
   }
 };
