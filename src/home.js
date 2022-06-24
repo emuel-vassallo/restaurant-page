@@ -7,7 +7,7 @@ export const loadHomePage = () => {
   const headline = document.createElement('h1');
   const heroParagraph = document.createElement('p');
   const heroButton = document.createElement('button');
-  const arrowRightIcon = document.createElement('img')
+  const arrowRightIcon = document.createElement('img');
 
   heroContainer.classList.add('hero');
   heroTextContainer.classList.add('hero-text');
@@ -19,8 +19,8 @@ export const loadHomePage = () => {
   heroParagraph.textContent =
     'Looking for an eco-friendly restaurant that delivers fresh and healthy food? Look no further than our tasty salad selection.';
   heroButton.textContent = 'Order Now';
-  
-  arrowRightIcon.setAttribute('src', '../src/components/arrow-right.svg')
+
+  arrowRightIcon.setAttribute('src', '../src/components/arrow-right.svg');
   heroImage.setAttribute('src', '../src/components/hero-image.png');
 
   heroTextContainer.append(headline, heroParagraph, heroButton);
