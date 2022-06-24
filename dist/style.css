@@ -3,10 +3,15 @@
 body {
   display: flex;
   flex-direction: column;
-  gap: 76px;
+  gap: 64px;
   margin: 0;
   box-sizing: border-box;
-  background-color: #fffaf4;
+  background: rgb(255, 250, 244);
+  background: linear-gradient(
+    45deg,
+    rgba(255, 250, 244, 1) 70%,
+    rgba(255, 255, 255, 1) 100%
+  );
   color: #000;
   font-family: 'Inter', sans-serif;
   padding: 0 18vw;
@@ -20,6 +25,7 @@ header {
   justify-content: space-between;
   height: 116px;
   padding: 16px 0;
+  animation: 1s ease-out 0s 1 slideInFromTop;
 }
 
 /* Left Container */
@@ -60,6 +66,11 @@ header {
 
 .tab-links a:hover {
   cursor: pointer;
+  font-weight: 600;
+}
+
+.selected-tab {
+  font-weight: 600;
 }
 
 /* Buttons */
@@ -70,13 +81,13 @@ header {
 }
 
 .header-order-now-button {
-  width: 142px;
+  width: 132px;
   height: 46px;
   font-size: 0.9rem;
   color: #fff;
   background-color: #000000;
   border: none;
-  border-radius: 22px;
+  border-radius: 26px;
   font-weight: 600;
   text-transform: uppercase;
 }
@@ -93,16 +104,57 @@ header {
   gap: 54px;
 }
 
-.headline {
-  font-size: 4rem;
-  margin: 0 0 32px 0;
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 36px 0;
+  width: 50%;
+  animation: 1.05s ease-out 0s 1 slideInFromLeft;
 }
 
-.hero p {
+.headline {
+  font-size: 4rem;
+  margin: 0;
+}
+
+.hero-text p {
+  margin: 0;
   font-size: 1.2rem;
   font-family: 'Inter', sans-serif;
 }
 
 .hero-image {
-  width: 500px;
+  width: 50%;
+  height: auto;
+  -webkit-filter: drop-shadow(3px 3px 14px #555);
+  filter: drop-shadow(3px 3px 14px #555);
+  animation: 0.8s ease-out 0s 1 slideInFromRight;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-40%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(40%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-70%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
