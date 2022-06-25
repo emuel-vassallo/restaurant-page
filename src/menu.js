@@ -43,7 +43,7 @@ addSaladToMenu(
 addSaladToMenu(
   'Israeli Spinach Salad',
   'components/salad-images/salad6.png',
-  'Chicken, spinach, carrot, jalapeno',
+  'Chicken, spinach, carrot, jalapeno, onion, seed',
   '10.90'
 );
 

@@ -272,7 +272,7 @@ header {
   border-radius: 50%;
   border: none;
   align-self: center;
-  transition: all 0.1s ease-in-out;
+  transition: all 0.3s ease-in-out;
   box-shadow: 0 0.5rem 1rem rgba(143, 142, 142, 0.15) !important;
   outline: none;
 }
@@ -284,11 +284,12 @@ header {
 }
 
 .salad-card-add-to-cart:active {
+  transition: all 0.05s ease-in-out;
   transform: scale(1);
 }
 
 .salad-card-plus-icon {
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
   width: 76%;
   height: 76%;
 }
