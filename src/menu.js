@@ -64,6 +64,8 @@ export const loadMenuPage = () => {
   menuContainer.classList.add('menu');
   saladGrid.classList.add('salad-grid');
 
+  let animationDuration = 0.11;
+
   for (const salad of menu) {
     const saladCard = document.createElement('div');
 
@@ -88,6 +90,9 @@ export const loadMenuPage = () => {
     plusIcon.setAttribute('src', 'components/icons/plus.svg');
     addToCartButton.append(plusIcon);
     saladImage.setAttribute('src', salad.image);
+
+    saladCard.style.animationDuration = `${animationDuration}s`;
+    animationDuration += 0.11;
 
     saladCard.append(
       saladImage,
