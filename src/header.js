@@ -27,10 +27,10 @@ export const loadHeader = () => {
   searchIcon.classList.add('header-icon');
   cartIcon.classList.add('header-icon');
   orderNowButton.classList.add('order-now-button');
-  searchIcon.setAttribute('src', '../src/components/icons/search.svg');
-  cartIcon.setAttribute('src', '../src/components/icons/shopping-cart.svg');
+  searchIcon.setAttribute('src', 'components/icons/search.svg');
+  cartIcon.setAttribute('src', 'components/icons/shopping-cart.svg');
 
-  logo.setAttribute('src', '../src/components/images/logo.png');
+  logo.setAttribute('src', 'components/images/logo.png');
 
   homeLink.textContent = 'home';
   menuLink.textContent = 'menu';

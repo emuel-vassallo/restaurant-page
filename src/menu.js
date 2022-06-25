@@ -14,42 +14,42 @@ const addSaladToMenu = (name, image, ingredients, price) => {
 
 addSaladToMenu(
   'Spinach Strawberry Salad',
-  '../src/components/salads/salad1.png',
+  'components/salad-images/salad1.png',
   'Spinach, strawberry, avocado, seed, almond',
   '8.90'
 );
 
 addSaladToMenu(
   'Fiesta Chickpea Salad',
-  '../src/components/salads/salad2.png',
+  'components/salad-images/salad2.png',
   'Chickpea, rice, tomato, bell pepper',
   '7.90'
 );
 
 addSaladToMenu(
   'Fattoush Salad',
-  '../src/components/salads/salad5.png',
+  'components/salad-images/salad5.png',
   'Lettuce, avocado, chicken, tomato, onion',
   '10.90'
 );
 
 addSaladToMenu(
   'Chicken Caesar Salad',
-  '../src/components/salads/salad3.png',
+  'components/salad-images/salad3.png',
   'Chicken, lettuce, pasta, garlic',
   '7.90'
 );
 
 addSaladToMenu(
   'Israeli Spinach Salad',
-  '../src/components/salads/salad6.png',
+  'components/salad-images/salad6.png',
   'Chicken, spinach, carrot, jalapeno',
   '10.90'
 );
 
 addSaladToMenu(
   'Roast Beef Coleslaw Salad',
-  '../src/components/salads/salad4.png',
+  'components/salad-images/salad4.png',
   'Roasted beef, coleslaw, tomato, onion',
   '8.90'
 );
@@ -85,7 +85,7 @@ export const loadMenuPage = () => {
     saladName.textContent = salad.name;
     saladIngredients.textContent = salad.ingredients;
     saladPrice.textContent = `€${salad.price}`;
-    plusIcon.setAttribute('src', '../src/components/icons/plus.svg');
+    plusIcon.setAttribute('src', 'components/icons/plus.svg');
     addToCartButton.append(plusIcon);
     saladImage.setAttribute('src', salad.image);
 

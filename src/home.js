@@ -20,8 +20,8 @@ export const loadHomePage = () => {
     "Looking for an eco-friendly restaurant that quickly delivers fresh and healthy salads? We've got you!";
   heroButton.textContent = 'Order Now';
 
-  arrowRightIcon.setAttribute('src', '../src/components/icons/arrow-right.svg');
-  heroImage.setAttribute('src', '../src/components/images/hero-image.png');
+  arrowRightIcon.setAttribute('src', 'components/icons/arrow-right.svg');
+  heroImage.setAttribute('src', 'components/images/hero-image.png');
 
   heroTextContainer.append(headline, heroParagraph, heroButton);
   heroContainer.append(heroTextContainer, heroImage);
