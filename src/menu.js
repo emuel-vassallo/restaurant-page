@@ -64,7 +64,8 @@ export const loadMenuPage = () => {
   menuContainer.classList.add('menu');
   saladGrid.classList.add('salad-grid');
 
-  let animationDuration = 0.11;
+  const initalAnimationDuration = 0.12;
+  let animationDuration = initalAnimationDuration;
 
   for (const salad of menu) {
     const saladCard = document.createElement('div');
@@ -92,7 +93,7 @@ export const loadMenuPage = () => {
     saladImage.setAttribute('src', salad.image);
 
     saladCard.style.animationDuration = `${animationDuration}s`;
-    animationDuration += 0.11;
+    animationDuration += initalAnimationDuration;
 
     saladCard.append(
       saladImage,
