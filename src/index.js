@@ -1,5 +1,6 @@
 import { loadHeader } from './header.js';
 import { loadHomePage } from './home.js';
+import { loadFooter } from './footer.js';
 import { loadMenuPage } from './menu.js';
 import { loadContactPage } from './contact.js';
 
@@ -36,4 +37,5 @@ const switchTab = () => {
 
 loadHeader();
 loadHomePage();
+loadFooter();
 switchTab();

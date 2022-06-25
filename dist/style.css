@@ -10,6 +10,8 @@ body {
   color: #000;
   font-family: 'Inter', sans-serif;
   padding: 0 18vw;
+  width: 100vw;
+  height: 100vh;
 }
 
 /* -- Header -- */
@@ -129,7 +131,6 @@ header {
   display: flex;
   flex-direction: column;
   gap: 42px;
-  padding: 36px 0;
 }
 
 .headline {
@@ -194,7 +195,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 46px;
   width: 100%;
   height: 100%;
@@ -217,7 +218,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 11px;
+  gap: 12px;
   background-color: #fffcf8;
   border-radius: 34px;
   box-shadow: 0px 6px 16px rgba(43, 8, 37, 0.1);
@@ -302,7 +303,29 @@ header {
   transform: rotate(90deg);
 }
 
-/* Keyframes */
+/* -- Footer -- */
+
+footer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  height: 116px;
+  padding: 16px 0;
+  animation: 0.9s ease-in-out 0s 1 slideInFromBottomFooter;
+}
+
+footer p {
+  display: flex;
+  gap: 5px;
+  margin: 0;
+}
+
+footer a {
+  color: #505050;
+  text-decoration: none;
+}
+
+/* --Keyframes -- */
 
 @keyframes slideInFromLeftHeadline {
   0% {
@@ -362,6 +385,17 @@ header {
 @keyframes slideInFromTopMenu {
   0% {
     transform: translateY(-36px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromBottomFooter {
+  0% {
+    transform: translateY(36px);
     opacity: 0;
   }
   100% {
