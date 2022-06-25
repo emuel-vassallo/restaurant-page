@@ -13,15 +13,16 @@ export const loadHomePage = () => {
   heroTextContainer.classList.add('hero-text');
   heroImage.classList.add('hero-image');
   headline.classList.add('headline');
-  heroButton.classList.add('order-now-button');
+  heroButton.classList.add('order-now-button', 'tab-link');
 
-  headline.textContent = 'Eat your salads just how you like them!';
+  headline.textContent = 'Salads with freshness in every bite!';
   heroParagraph.textContent =
-    "Looking for an eco-friendly restaurant that quickly delivers fresh and healthy salads? We've got you!";
+    "Hungry and craving some tasty and nutritious salads? We've got your back!";
   heroButton.textContent = 'Order Now';
 
   arrowRightIcon.setAttribute('src', 'components/icons/arrow-right.svg');
   heroImage.setAttribute('src', 'components/images/hero-image.png');
+  heroButton.setAttribute('data-tab-link', 'menu');
 
   heroTextContainer.append(headline, heroParagraph, heroButton);
   heroContainer.append(heroTextContainer, heroImage);

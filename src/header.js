@@ -23,14 +23,20 @@ export const loadHeader = () => {
   rightElementsContainer.classList.add('header-right-elements');
   logo.classList.add('header-logo');
   tabLinks.classList.add('tab-links');
-  homeLink.classList.add('selected-tab');
+  homeLink.classList.add('selected-tab', 'tab-link', 'header-tab-link');
+  menuLink.classList.add('tab-link', 'header-tab-link');
+  contactLink.classList.add('tab-link', 'header-tab-link');
   searchIcon.classList.add('header-icon');
   cartIcon.classList.add('header-icon');
-  orderNowButton.classList.add('order-now-button');
+  orderNowButton.classList.add('order-now-button', 'tab-link');
   searchIcon.setAttribute('src', 'components/icons/search.svg');
   cartIcon.setAttribute('src', 'components/icons/shopping-cart.svg');
 
   logo.setAttribute('src', 'components/images/logo.png');
+  homeLink.setAttribute('data-tab-link', 'home');
+  menuLink.setAttribute('data-tab-link', 'menu');
+  contactLink.setAttribute('data-tab-link', 'contact');
+  orderNowButton.setAttribute('data-tab-link', 'menu');
 
   homeLink.textContent = 'home';
   menuLink.textContent = 'menu';

@@ -18,20 +18,30 @@ const loadPage = (tabName) =>
     contact: loadContactPage,
   }[tabName]?.());
 
+const addSelectedTabClass = (tabName) => {
+  const headerTabLinks = document.querySelectorAll('.tab-link');
+  for (const link of headerTabLinks)
+    if (link.dataset.tabLink === tabName) link.classList.add('selected-tab');
+};
+
 const removeSelectedTabClass = () => {
-  const headerTabLinks = document.querySelectorAll('.tab-links li a');
-  for (const link of headerTabLinks) link.classList.remove('selected-tab');
+  const headerTabLinks = document.querySelectorAll('.tab-link');
+  for (const link of headerTabLinks)
+    if (link.classList.contains('selected-tab'))
+      link.classList.remove('selected-tab');
 };
 
 const switchTab = () => {
-  const headerTabLinks = document.querySelectorAll('.tab-links li a');
-  for (const link of headerTabLinks) {
+  const tabLinks = document.querySelectorAll('.tab-link');
+  for (const link of tabLinks) {
     link.addEventListener('click', () => {
+      console.log(tabLinks);
       if (link.classList.contains('selected-tab')) return;
+      const clickedLink = link.dataset.tabLink;
       emptyContentDiv();
-      loadPage(link.textContent);
+      loadPage(clickedLink);
       removeSelectedTabClass();
-      link.classList.add('selected-tab');
+      addSelectedTabClass(clickedLink);
     });
   }
 };
