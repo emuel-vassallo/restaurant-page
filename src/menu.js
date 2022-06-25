@@ -68,7 +68,7 @@ export const loadMenuPage = () => {
     const saladCard = document.createElement('div');
 
     const saladImage = document.createElement('img');
-    const saladName = document.createElement('h3');
+    const saladName = document.createElement('h2');
     const saladIngredients = document.createElement('p');
     const saladPrice = document.createElement('p');
     const addToCartButton = document.createElement('button');
@@ -85,7 +85,7 @@ export const loadMenuPage = () => {
     saladImage.setAttribute('src', salad.image);
     saladName.textContent = salad.name;
     saladIngredients.textContent = salad.ingredients;
-    saladPrice.textContent = `€${salad.price}`;
+    saladPrice.textContent = `€ ${salad.price}`;
     plusIcon.setAttribute('src', '../src/components/icons/plus.svg');
     addToCartButton.append(plusIcon);
 
