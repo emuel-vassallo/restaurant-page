@@ -35,7 +35,7 @@ export const loadHeader = () => {
   homeLink.textContent = 'home';
   menuLink.textContent = 'menu';
   contactLink.textContent = 'contact';
-  orderNowButton.textContent = 'order now';
+  orderNowButton.textContent = 'order now'; 
 
   homeLinkListItem.append(homeLink);
   menuLinkListItem.append(menuLink);

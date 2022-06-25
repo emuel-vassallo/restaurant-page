@@ -11,7 +11,6 @@ body {
   color: #000;
   font-family: 'Inter', sans-serif;
   padding: 0 18vw;
-  width: 100vw;
   height: 100vh;
 }
 
@@ -23,7 +22,7 @@ header {
   justify-content: space-between;
   width: 100%;
   height: 116px;
-  padding: 16px 0;
+  padding: 16px 0 0 0;
   animation: 0.7s ease-in-out 0s 1 slideInFromTop;
   gap: 16px;
 }
@@ -146,21 +145,6 @@ header {
   animation: 0.8s ease-in-out 0s 1 slideInFromLeftDescription;
 }
 
-.hero-image {
-  width: 36vw;
-  max-width: 550px;
-  -webkit-filter: drop-shadow(0 0 16px #555);
-  filter: drop-shadow(0 0 16px #555);
-  animation: 0.5s ease-in-out 0s 1 slideInFromRight;
-  transition: transform 0.3s ease-in-out;
-}
-
-.hero-image:hover {
-  transform: translateY(-6px);
-  -webkit-filter: drop-shadow(0 0 16px #555);
-  filter: drop-shadow(0 0 16px #555);
-}
-
 .hero-text .order-now-button {
   display: flex;
   align-items: center;
@@ -170,7 +154,7 @@ header {
   text-align: left;
   padding: 0 24px;
   font-size: 0.98rem;
-  animation: 0.8s ease-in-out 0s 1 slideInFromLeftButton;
+  animation: 0.85s ease-in-out 0s 1 slideInFromLeftButton;
 }
 
 .order-now-button {
@@ -188,6 +172,21 @@ header {
 
 .hero-text .order-now-button:hover img {
   transform: translateX(5px);
+}
+
+.hero-image {
+  width: 36vw;
+  max-width: 550px;
+  -webkit-filter: drop-shadow(0 0 16px #555);
+  filter: drop-shadow(0 0 16px #555);
+  animation: 0.5s ease-in-out 0s 1 slideInFromRight;
+  transition: transform 0.3s ease-in-out;
+}
+
+.hero-image:hover {
+  transform: translateY(-6px);
+  -webkit-filter: drop-shadow(0 0 16px #555);
+  filter: drop-shadow(0 0 16px #555);
 }
 
 /* -- Menu -- */
@@ -209,10 +208,10 @@ header {
 
 .salad-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  place-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   gap: 34px;
   width: 100%;
+  height: 100%;
 }
 
 .salad-card {
@@ -311,7 +310,7 @@ footer {
   justify-content: flex-start;
   align-items: flex-end;
   height: 116px;
-  padding: 16px 0;
+  padding: 0 0 16px 0;
   animation: 0.9s ease-in-out 0s 1 slideInFromBottomFooter;
 }
 

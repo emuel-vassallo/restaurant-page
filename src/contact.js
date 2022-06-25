@@ -1,4 +1,10 @@
 export const loadContactPage = () => {
   const contentDiv = document.querySelector('#content');
-  contentDiv.textContent = 'Contact';
+  
+  const contactContainer = document.createElement('div');
+  const contactHeading = document.createElement('h1');
+  
+  contactHeading.textContent = 'Contact Us';
+  contactContainer.append(contactHeading)
+  contentDiv.append(contactContainer);
 };

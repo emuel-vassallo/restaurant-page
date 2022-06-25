@@ -1,5 +1,6 @@
 export const loadFooter = () => {
   const footerContainer = document.querySelector('footer');
+  
   const footerText = document.createElement('p');
   const devNameLink = document.createElement('a');
   const sourceCodeLink = document.createElement('a');

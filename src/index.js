@@ -27,6 +27,7 @@ const switchTab = () => {
   const headerTabLinks = document.querySelectorAll('.tab-links li a');
   for (const link of headerTabLinks) {
     link.addEventListener('click', () => {
+      if (link.classList.contains('selected-tab')) return;
       emptyContentDiv();
       loadPage(link.textContent);
       removeSelectedTabClass();

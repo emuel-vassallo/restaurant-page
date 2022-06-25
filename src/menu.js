@@ -56,6 +56,7 @@ addSaladToMenu(
 
 export const loadMenuPage = () => {
   const contentDiv = document.querySelector('#content');
+  
   const menuContainer = document.createElement('div');
   const menuHeading = document.createElement('h1');
   const saladGrid = document.createElement('div');
