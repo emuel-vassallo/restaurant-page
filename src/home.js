@@ -15,9 +15,9 @@ export const loadHomePage = () => {
   headline.classList.add('headline');
   heroButton.classList.add('order-now-button');
 
-  headline.textContent = 'Live a healthier life with fresh salads!';
+  headline.textContent = 'Eat your salads just how you like them!';
   heroParagraph.textContent =
-    'Looking for an eco-friendly restaurant that delivers fresh and healthy food? Look no further than our tasty salad selection.';
+    "Looking for an eco-friendly restaurant that quickly delivers fresh and healthy salads? We've got you!";
   heroButton.textContent = 'Order Now';
 
   arrowRightIcon.setAttribute('src', '../src/components/arrow-right.svg');
