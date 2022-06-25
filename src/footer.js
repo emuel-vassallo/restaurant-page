@@ -1,6 +1,6 @@
 export const loadFooter = () => {
   const footerContainer = document.querySelector('footer');
-  
+
   const footerText = document.createElement('p');
   const devNameLink = document.createElement('a');
   const sourceCodeLink = document.createElement('a');
@@ -22,10 +22,6 @@ export const loadFooter = () => {
   );
   sourceCodeLink.setAttribute('target', '_blank');
 
-  footerText.append(
-    devNameLink,
-    copyrightSpan,
-    sourceCodeLink
-  );
+  footerText.append(devNameLink, copyrightSpan, sourceCodeLink);
   footerContainer.append(footerText);
 };

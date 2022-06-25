@@ -1,17 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
+* {
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 64px;
-  margin: 0;
-  box-sizing: border-box;
   background: #fffaf4;
   color: #000;
-  font-family: 'Inter', sans-serif;
-  padding: 0 18vw;
-  height: 100vh;
+  margin: 0 18vw;
+  min-height: 100vh;
 }
 
 /* -- Header -- */
@@ -52,8 +56,6 @@ header {
   list-style-type: none;
   display: flex;
   gap: 64px;
-  margin: 0;
-  padding: 0;
 }
 
 .tab-links a {
@@ -85,7 +87,7 @@ header {
 
 .order-now-button {
   width: 132px;
-  height: 46px;
+  height: 48px;
   font-size: 0.9rem;
   color: #fff;
   background-color: #000000;
@@ -94,11 +96,15 @@ header {
   font-weight: 600;
   text-transform: capitalize;
   transition: all 0.3s ease-in-out;
+  user-select: none;
+  box-shadow: 0 0.5rem 1rem rgba(143, 142, 142, 0.15) !important;
 }
 
 .order-now-button:hover {
   transition: all 0.2s ease-in-out;
   transform: scale(1.03);
+  cursor: pointer;
+  background-color: #2b2a2a;
 }
 
 .order-now-button:active {
@@ -108,6 +114,7 @@ header {
 
 .header-right-elements * {
   transition: all 0.1s ease-in-out;
+  user-select: none;
 }
 
 .header-right-elements *:hover {
@@ -135,12 +142,10 @@ header {
 
 .headline {
   font-size: 3.5rem;
-  margin: 0;
   animation: 0.7s ease-in-out 0s 1 slideInFromLeftHeadline;
 }
 
 .hero-text p {
-  margin: 0;
   font-size: 1.2rem;
   animation: 0.8s ease-in-out 0s 1 slideInFromLeftDescription;
 }
@@ -150,20 +155,10 @@ header {
   align-items: center;
   justify-content: space-between;
   width: 167px;
-  height: 48px;
   text-align: left;
   padding: 0 24px;
   font-size: 0.98rem;
   animation: 0.85s ease-in-out 0s 1 slideInFromLeftButton;
-}
-
-.order-now-button {
-  box-shadow: 0 0.5rem 1rem rgba(143, 142, 142, 0.15) !important;
-}
-
-.order-now-button:hover {
-  cursor: pointer;
-  background-color: #2b2a2a;
 }
 
 .hero-text .order-now-button > img {
@@ -171,7 +166,7 @@ header {
 }
 
 .hero-text .order-now-button:hover img {
-  transform: translateX(5px);
+  transform: translateX(3px);
 }
 
 .hero-image {
@@ -181,6 +176,7 @@ header {
   filter: drop-shadow(0 0 16px #555);
   animation: 0.5s ease-in-out 0s 1 slideInFromRight;
   transition: transform 0.3s ease-in-out;
+  user-select: none;
 }
 
 .hero-image:hover {
@@ -202,7 +198,6 @@ header {
 }
 
 .menu > h1 {
-  margin: 0;
   animation: 0.4s ease-in-out 0s 1 slideInFromTopMenu;
 }
 
@@ -224,14 +219,14 @@ header {
   box-shadow: 0px 6px 16px rgba(43, 8, 37, 0.1);
   width: 100%;
   height: 100%;
-  padding: 8px;
+  padding: 18px 32px;
   outline: 1px solid #fffdfb;
   transition: all 0.3s ease-in-out;
   animation: 1s ease-in-out 0s 1 slideInFromTopMenu;
 }
 
 .salad-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
   background-color: #fffefe;
 }
 
@@ -245,24 +240,15 @@ header {
 }
 
 .salad-card:hover .salad-card-image {
-  transform: translateY(-2px);
-}
-
-.salad-card-name {
-  margin: 0;
-  padding: 0 32px;
+  transform: translateY(-3px);
 }
 
 .salad-card-ingredients {
-  margin: 0;
   font-size: 0.9rem;
-  padding: 0 32px;
 }
 
 .salad-card-price {
-  margin: 0;
   font-weight: 600;
-  padding: 0 32px;
   font-size: 1.05rem;
 }
 
@@ -279,7 +265,6 @@ header {
   transition: all 0.3s ease-in-out;
   box-shadow: 0 0.5rem 1rem rgba(143, 142, 142, 0.15);
   outline: none;
-  padding: 0;
 }
 
 .salad-card-add-to-cart:hover {
@@ -289,7 +274,7 @@ header {
 }
 
 .salad-card-add-to-cart:active {
-  transition: all 0.05s ease-in-out;
+  transition: all 0.1s ease-in-out;
   transform: scale(1);
 }
 
@@ -317,7 +302,6 @@ footer {
 footer p {
   display: flex;
   gap: 5px;
-  margin: 0;
 }
 
 footer a {

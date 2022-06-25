@@ -56,7 +56,7 @@ addSaladToMenu(
 
 export const loadMenuPage = () => {
   const contentDiv = document.querySelector('#content');
-  
+
   const menuContainer = document.createElement('div');
   const menuHeading = document.createElement('h1');
   const saladGrid = document.createElement('div');
@@ -65,7 +65,7 @@ export const loadMenuPage = () => {
   menuContainer.classList.add('menu');
   saladGrid.classList.add('salad-grid');
 
-  const initalAnimationDuration = 0.12;
+  const initalAnimationDuration = 0.15;
   let animationDuration = initalAnimationDuration;
 
   for (const salad of menu) {
