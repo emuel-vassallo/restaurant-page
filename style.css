@@ -6,12 +6,7 @@ body {
   gap: 64px;
   margin: 0;
   box-sizing: border-box;
-  background: rgb(255, 250, 244);
-  background: linear-gradient(
-    45deg,
-    rgba(255, 250, 244, 1) 70%,
-    rgba(255, 255, 255, 1) 100%
-  );
+  background: #fffaf4;
   color: #000;
   font-family: 'Inter', sans-serif;
   padding: 0 18vw;
@@ -66,6 +61,7 @@ header {
   text-transform: capitalize;
   font-weight: 600;
   user-select: none;
+  transition: all 0.2s ease-in-out;
 }
 
 .tab-links a:hover {
@@ -76,7 +72,6 @@ header {
 .selected-tab {
   padding: 0 0 6px 0;
   border-bottom: 2px solid #000;
-  transition: all 0.1s ease-in-out;
 }
 
 /* Header Buttons */
@@ -200,13 +195,14 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 24px;
+  gap: 46px;
   width: 100%;
   height: 100%;
 }
 
 .menu > h1 {
-  animation: 0.4s ease-in-out 0s 1 slideInFromTop;
+  margin: 0;
+  animation: 0.4s ease-in-out 0s 1 slideInFromTopMenu;
 }
 
 .salad-grid {
@@ -228,14 +224,14 @@ header {
   width: 100%;
   height: 100%;
   padding: 8px;
-  transition: all 0.3s ease-in-out;
   outline: 1px solid #fffdfb;
-  animation: 1s ease-in-out 0s 1 slideInFromTopSaladCard;
+  transition: all 0.3s ease-in-out;
+  animation: 1s ease-in-out 0s 1 slideInFromTopMenu;
 }
 
 .salad-card:hover {
   transform: translateY(-3px);
-  background-color: #fffefc;
+  background-color: #fffefe;
 }
 
 .salad-card-image {
@@ -274,8 +270,8 @@ header {
   align-items: center;
   justify-content: center;
   background-color: #000;
-  width: 43px;
-  height: 43px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   border: none;
   align-self: center;
@@ -297,7 +293,7 @@ header {
 }
 
 .salad-card-plus-icon {
-  transition: all 0.27s ease-in-out;
+  transition: all 0.24s ease-in-out;
   width: 60%;
   height: 60%;
 }
@@ -310,56 +306,66 @@ header {
 
 @keyframes slideInFromLeftHeadline {
   0% {
-    transform: translateX(-40%);
+    opacity: 0;
+    transform: translateX(-9vw);
   }
   100% {
     transform: translateX(0);
+    opacity: 1;
   }
 }
 
 @keyframes slideInFromLeftDescription {
   0% {
-    transform: translateX(-45%);
+    opacity: 0;
+    transform: translateX(-10vw);
   }
   100% {
     transform: translateX(0);
+    opacity: 1;
   }
 }
 
 @keyframes slideInFromLeftButton {
   0% {
-    transform: translateX(-90%);
+    transform: translateX(-11vw);
+    opacity: 0;
   }
   100% {
     transform: translateX(0);
+    opacity: 1;
   }
 }
 
 @keyframes slideInFromRight {
   0% {
-    transform: translateX(40%);
+    transform: translateX(8vw);
+    opacity: 0;
   }
   100% {
     transform: translateX(0);
+    opacity: 1;
   }
 }
 
 @keyframes slideInFromTop {
   0% {
-    transform: translateY(-70%);
+    transform: translateY(-9vh);
+    opacity: 0;
   }
   100% {
     transform: translateY(0);
+    opacity: 1;
   }
 }
 
-@keyframes slideInFromTopSaladCard {
+@keyframes slideInFromTopMenu {
   0% {
-    transform: translateY(-32px);
-    opacity: 0%;
+    transform: translateY(-36px);
+    opacity: 0;
   }
   100% {
     transform: translateY(0);
-    opacity: 1000%;
+    opacity: 1;
   }
 }
