@@ -65,6 +65,7 @@ header {
   font-size: 1rem;
   text-transform: capitalize;
   font-weight: 600;
+  user-select: none;
 }
 
 .tab-links a:hover {
@@ -99,7 +100,13 @@ header {
 }
 
 .order-now-button:hover {
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.03);
+}
+
+.order-now-button:active {
+  transition: all 0.05s ease-in-out;
+  transform: scale(1);
 }
 
 .header-right-elements * {
@@ -143,7 +150,7 @@ header {
 }
 
 .hero-image {
-  width: 40vw;
+  width: 36vw;
   max-width: 550px;
   -webkit-filter: drop-shadow(0 0 16px #555);
   filter: drop-shadow(0 0 16px #555);
@@ -208,7 +215,6 @@ header {
   place-items: center;
   gap: 34px;
   width: 100%;
-  animation: 0.4s ease-in-out 0s 1 slideInFromTopSaladCard;
 }
 
 .salad-card {
@@ -218,12 +224,13 @@ header {
   gap: 11px;
   background-color: #fffcf8;
   border-radius: 34px;
-  box-shadow: 0 0 1rem rgba(143, 142, 142, 0.15) !important;
+  box-shadow: 0px 6px 16px rgba(43, 8, 37, 0.1);
   width: 100%;
   height: 100%;
   padding: 8px;
   transition: all 0.3s ease-in-out;
   outline: 1px solid #fffdfb;
+  animation: 1s ease-in-out 0s 1 slideInFromTopSaladCard;
 }
 
 .salad-card:hover {
@@ -234,8 +241,8 @@ header {
 .salad-card-image {
   width: 65%;
   height: auto;
-  -webkit-filter: drop-shadow(0 0 8px #ccc);
-  filter: drop-shadow(0 0 8px #ccc);
+  -webkit-filter: drop-shadow(0 0 16px #aaa);
+  filter: drop-shadow(0 0 16px #aaa);
   align-self: center;
   transition: transform 0.3s ease-in-out;
 }
@@ -273,8 +280,9 @@ header {
   border: none;
   align-self: center;
   transition: all 0.3s ease-in-out;
-  box-shadow: 0 0.5rem 1rem rgba(143, 142, 142, 0.15) !important;
+  box-shadow: 0 0.5rem 1rem rgba(143, 142, 142, 0.15);
   outline: none;
+  padding: 0;
 }
 
 .salad-card-add-to-cart:hover {
@@ -289,9 +297,9 @@ header {
 }
 
 .salad-card-plus-icon {
-  transition: all 0.2s ease-in-out;
-  width: 76%;
-  height: 76%;
+  transition: all 0.27s ease-in-out;
+  width: 60%;
+  height: 60%;
 }
 
 .salad-card-add-to-cart:hover .salad-card-plus-icon {
@@ -311,7 +319,7 @@ header {
 
 @keyframes slideInFromLeftDescription {
   0% {
-    transform: translateX(-50%);
+    transform: translateX(-45%);
   }
   100% {
     transform: translateX(0);
@@ -347,9 +355,11 @@ header {
 
 @keyframes slideInFromTopSaladCard {
   0% {
-    transform: translateY(-8%);
+    transform: translateY(-32px);
+    opacity: 0%;
   }
   100% {
     transform: translateY(0);
+    opacity: 1000%;
   }
 }
