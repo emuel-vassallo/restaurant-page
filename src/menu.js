@@ -22,7 +22,7 @@ addSaladToMenu(
 addSaladToMenu(
   'Fiesta Chickpea Salad',
   '../src/components/salads/salad2.png',
-  'Chickpea, rice, tomato, orange pepper',
+  'Chickpea, rice, tomato, bell pepper',
   '7.90'
 );
 
@@ -82,12 +82,12 @@ export const loadMenuPage = () => {
     addToCartButton.classList.add('salad-card-add-to-cart');
     plusIcon.classList.add('salad-card-plus-icon');
 
-    saladImage.setAttribute('src', salad.image);
     saladName.textContent = salad.name;
     saladIngredients.textContent = salad.ingredients;
-    saladPrice.textContent = `€ ${salad.price}`;
+    saladPrice.textContent = `€${salad.price}`;
     plusIcon.setAttribute('src', '../src/components/icons/plus.svg');
     addToCartButton.append(plusIcon);
+    saladImage.setAttribute('src', salad.image);
 
     saladCard.append(
       saladImage,
@@ -96,6 +96,7 @@ export const loadMenuPage = () => {
       saladPrice,
       addToCartButton
     );
+
     saladGrid.append(saladCard);
   }
 
