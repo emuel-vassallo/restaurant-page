@@ -5,6 +5,8 @@
   font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
+  border: 0;
+  outline: none;
 }
 
 body {
@@ -14,7 +16,7 @@ body {
   gap: 64px;
   background: #fffaf4;
   color: #000;
-  margin: 0 18vw;
+  padding: 16px 18vw;
   min-height: 100vh;
 }
 
@@ -26,7 +28,6 @@ header {
   justify-content: space-between;
   width: 100%;
   height: 116px;
-  padding: 16px 0 0 0;
   animation: 0.7s ease-in-out 0s 1 slideInFromTop;
   gap: 16px;
 }
@@ -58,7 +59,7 @@ header {
   gap: 64px;
 }
 
-.tab-links a {
+.header-tab-link {
   text-decoration: none;
   color: black;
   font-size: 1rem;
@@ -68,12 +69,12 @@ header {
   transition: all 0.2s ease-in-out;
 }
 
-.tab-links a:hover {
+.header-tab-link:hover {
   cursor: pointer;
   color: #464646;
 }
 
-.selected-tab {
+.header-tab-link.selected-tab {
   padding: 0 0 6px 0;
   border-bottom: 2px solid #000;
 }
@@ -85,19 +86,31 @@ header {
   gap: 36px;
 }
 
+.header-right-elements * {
+  transition: all 0.2s ease-in-out;
+  user-select: none;
+}
+
+.header-right-elements *:hover {
+  cursor: pointer;
+}
+
 .order-now-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 132px;
   height: 48px;
   font-size: 0.9rem;
   color: #fff;
-  background-color: #000000;
-  border: none;
+  background-color: #000;
   border-radius: 26px;
   font-weight: 600;
   text-transform: capitalize;
   transition: all 0.3s ease-in-out;
   user-select: none;
   box-shadow: 0 0.5rem 1rem rgba(143, 142, 142, 0.15) !important;
+  padding: 0;
 }
 
 .order-now-button:hover {
@@ -109,16 +122,7 @@ header {
 
 .order-now-button:active {
   transition: all 0.05s ease-in-out;
-  transform: scale(1);
-}
-
-.header-right-elements * {
-  transition: all 0.1s ease-in-out;
-  user-select: none;
-}
-
-.header-right-elements *:hover {
-  cursor: pointer;
+  transform: scale(0.99);
 }
 
 .header-icon:hover {
@@ -151,12 +155,9 @@ header {
 }
 
 .hero-text .order-now-button {
-  display: flex;
-  align-items: center;
   justify-content: space-between;
-  width: 167px;
-  text-align: left;
-  padding: 0 24px;
+  width: 168px;
+  padding: 0 26px;
   font-size: 0.98rem;
   animation: 0.85s ease-in-out 0s 1 slideInFromLeftButton;
 }
@@ -203,7 +204,7 @@ header {
 
 .salad-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 34px;
   width: 100%;
   height: 100%;
@@ -213,7 +214,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 12px;
+  gap: 11px;
   background-color: #fffcf8;
   border-radius: 34px;
   box-shadow: 0px 6px 16px rgba(43, 8, 37, 0.1);
@@ -260,11 +261,9 @@ header {
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  border: none;
   align-self: center;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 0.5rem 1rem rgba(143, 142, 142, 0.15);
-  outline: none;
 }
 
 .salad-card-add-to-cart:hover {
@@ -275,7 +274,7 @@ header {
 
 .salad-card-add-to-cart:active {
   transition: all 0.1s ease-in-out;
-  transform: scale(1);
+  transform: scale(0.99);
 }
 
 .salad-card-plus-icon {
@@ -291,16 +290,13 @@ header {
 /* -- Footer -- */
 
 footer {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-end;
-  height: 116px;
-  padding: 0 0 16px 0;
+  display: block;
   animation: 0.9s ease-in-out 0s 1 slideInFromBottomFooter;
 }
 
 footer p {
   display: flex;
+  flex-wrap: wrap;
   gap: 5px;
 }
 
