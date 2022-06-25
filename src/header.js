@@ -24,13 +24,13 @@ export const loadHeader = () => {
   logo.classList.add('header-logo');
   tabLinks.classList.add('tab-links');
   homeLink.classList.add('selected-tab');
-  searchIcon.classList.add('header-icon')
-  cartIcon.classList.add('header-icon')
+  searchIcon.classList.add('header-icon');
+  cartIcon.classList.add('header-icon');
   orderNowButton.classList.add('order-now-button');
-  searchIcon.setAttribute('src', '../src/components/search.svg');
-  cartIcon.setAttribute('src', '../src/components/shopping-cart.svg');
+  searchIcon.setAttribute('src', '../src/components/icons/search.svg');
+  cartIcon.setAttribute('src', '../src/components/icons/shopping-cart.svg');
 
-  logo.setAttribute('src', '../src/components/logo.png');
+  logo.setAttribute('src', '../src/components/images/logo.png');
 
   homeLink.textContent = 'home';
   menuLink.textContent = 'menu';

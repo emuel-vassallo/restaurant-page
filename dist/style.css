@@ -224,8 +224,8 @@ header {
 .salad-card-image {
   width: 232px;
   height: auto;
-  -webkit-filter: drop-shadow(0 0 8px #555);
-  filter: drop-shadow(0 0 8px #555);
+  -webkit-filter: drop-shadow(0 0 8px #ccc);
+  filter: drop-shadow(0 0 8px #ccc);
 }
 
 /* Keyframes */

@@ -13,44 +13,44 @@ const addSaladToMenu = (name, image, ingredients, price) => {
 };
 
 addSaladToMenu(
-  'Salad 1',
+  'Spinach Strawberry Salad',
   '../src/components/salads/salad1.png',
-  'Sliced strawberry and vegetables',
+  'Spinach, strawberry, avocado, seed, almond',
   '8.90'
 );
 
 addSaladToMenu(
-  'Salad 2',
+  'Fiesta Chickpea Salad',
   '../src/components/salads/salad2.png',
-  'Lettuce, cucumber, chicken, tomatos, broccoli',
-  '10.90'
-);
-
-addSaladToMenu(
-  'Salad 3',
-  '../src/components/salads/salad3.png',
-  'Kiwi, strawberries, blueberries, mango',
+  'Chickpea, rice, tomato, orange pepper',
   '7.90'
 );
 
 addSaladToMenu(
-  'Salad 4',
-  '../src/components/salads/salad4.png',
-  'Carrots, lettuce, chicken, mushrooms',
-  '10.90'
-);
-
-addSaladToMenu(
-  'Salad 5',
+  'Fattoush Salad',
   '../src/components/salads/salad5.png',
-  'Egg, chicken, tomatoes, lettuce, onion',
+  'Lettuce, avocado, chicken, tomato, onion',
+  '10.90'
+);
+
+addSaladToMenu(
+  'Chicken Caesar Salad',
+  '../src/components/salads/salad3.png',
+  'Chicken, lettuce, pasta, garlic',
   '7.90'
 );
 
 addSaladToMenu(
-  'Salad 6',
+  'Israeli Spinach Salad',
   '../src/components/salads/salad6.png',
-  'Spinach, cucumber, chicken, red cabbage',
+  'Chicken, spinach, carrot, jalapeno',
+  '10.90'
+);
+
+addSaladToMenu(
+  'Roast Beef Coleslaw Salad',
+  '../src/components/salads/salad4.png',
+  'Roasted beef, coleslaw, tomato, onion',
   '8.90'
 );
 
@@ -86,7 +86,7 @@ export const loadMenuPage = () => {
     saladName.textContent = salad.name;
     saladIngredients.textContent = salad.ingredients;
     saladPrice.textContent = `€${salad.price}`;
-    plusIcon.setAttribute('src', '../src/components/plus.svg');
+    plusIcon.setAttribute('src', '../src/components/icons/plus.svg');
     addToCartButton.append(plusIcon);
 
     saladCard.append(
