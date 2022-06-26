@@ -14,7 +14,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   gap: 64px;
-  background: #fffaf4;
+  background-color: #fffaf4;
   color: #000;
   padding: 16px 18vw;
   min-height: 100vh;
@@ -111,13 +111,14 @@ header {
 .cart-icon.cart-has-item::before {
   content: attr(data-count);
   position: absolute;
-  top: -17px;
-  right: -17px;
+  top: -15px;
+  right: -15px;
   width: 21px;
   height: 21px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 3px solid #fffaf4;
   border-radius: 50%;
   color: #fff;
   background-color: #abd35f;
@@ -128,6 +129,7 @@ header {
 
 .cart-icon.shake {
   animation: shakeCart 0.4s ease-in-out forwards;
+  --webkit-animation: shakeCart 0.4s ease-in-out forwards;
 }
 
 /* CTA Button */
@@ -341,12 +343,35 @@ header {
   height: 100%;
 }
 
-.map {
-  width: 50%;
-  height: 500px;
-  border-radius: 8px;
-  animation: 0.6s ease-in-out 0s 1 slideInFromLeft3;
+.contact > p {
+  animation: 0.5s ease-in-out 0s 1 slideInFromTopParagraph;
+  --webkit-animation: 0.5s ease-in-out 0s 1 slideInFromTopParagraph;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 400px;
+  border-radius: 16px;
+  overflow: hidden;
+  perspective: 1px;
+  box-shadow: 0 0 32px rgba(43, 8, 37, 0.05);
+}
+
+.contact-form {
+  display: flex;
+  flex: 1;
+  background-color: #fffcf5;
+  padding: 18px 32px;
+  animation: 0.5s ease-in-out 0s 1 slideInFromLeft3;
   --webkit-animation: 0.4s ease-in-out 0s 1 slideInFromLeft3;
+}
+
+.map {
+  flex: 1;
+  animation: 0.5s ease-in-out 0s 1 slideInFromRight;
+  --webkit-animation: 0.4s ease-in-out 0s 1 slideInFromRight;
 }
 
 /* -- Footer -- */
@@ -437,6 +462,17 @@ footer a:hover {
 @keyframes slideInFromTopMenu {
   0% {
     transform: translateY(-36px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromTopParagraph {
+  0% {
+    transform: translateY(-18px);
     opacity: 0;
   }
   100% {
