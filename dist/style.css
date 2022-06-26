@@ -1,5 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
+:root {
+  --bg: #fffaf4;
+  --color: #000000;
+  --hover-color: #464646;
+  --hover-color-button: #2b2a2a;
+  --button-color: #ffffff;
+  --cart-item-count-bg: #d60846;
+  --menu-card-bg: #fffcf8;
+  --menu-card-hover-bg: #fcfaf8;
+  --input-bg: #f5f3f1;
+  --input-color: #413e3e;
+  --form-label-color: #05060f99;
+  --form-input-border-color-hover: #bbbbbb;
+  --form-label-hover-color: #05060fc2;
+  --footer-link-color: #555555;
+}
+
 * {
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
@@ -14,8 +31,8 @@ body {
   flex-direction: column;
   justify-content: space-between;
   gap: 64px;
-  background-color: #fffaf4;
-  color: #000;
+  background-color: var(--bg);
+  color: var(--color);
   padding: 16px 18vw;
   min-height: 100vh;
 }
@@ -75,12 +92,12 @@ header {
 
 .header-tab-link:hover {
   cursor: pointer;
-  color: #464646;
+  color: var(--hover-color);
 }
 
 .header-tab-link.selected-tab {
   padding: 0 0 6px 0;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid var(--color);
 }
 
 /* Header Right Container */
@@ -118,10 +135,10 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid #fffaf4;
+  border: 2px solid var(--bg);
   border-radius: 50%;
-  color: #fff;
-  background-color: #d60846;
+  color: var(--button-color);
+  background-color: var(--cart-item-count-bg);
   font-weight: 600;
   font-size: 0.75rem;
   text-align: center;
@@ -140,8 +157,8 @@ header {
   align-items: center;
   justify-content: center;
   font-size: 0.9rem;
-  color: #fff;
-  background-color: #000;
+  color: var(--button-color);
+  background-color: var(--color);
   border-radius: 26px;
   font-weight: 600;
   text-transform: capitalize;
@@ -155,7 +172,7 @@ header {
 .contact-form button:hover {
   transition: all 0.2s ease-in-out;
   cursor: pointer;
-  background-color: #2b2a2a;
+  background-color: var(--hover-color-button);
 }
 
 /* CTA Button */
@@ -266,7 +283,7 @@ header {
   flex-direction: column;
   justify-content: center;
   gap: 11px;
-  background-color: #fffcf8;
+  background-color: var(--menu-card-bg);
   border-radius: 34px;
   box-shadow: 0px 6px 16px rgba(43, 8, 37, 0.1);
   width: 100%;
@@ -279,7 +296,7 @@ header {
 
 .salad-card:hover {
   transform: translateY(-4px);
-  background-color: #fcfaf8;
+  background-color: var(--cart-item-count-hover-bg);
 }
 
 .salad-card-image {
@@ -308,7 +325,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #000;
+  background-color: var(--color);
   width: 45px;
   height: 45px;
   border-radius: 50%;
@@ -320,7 +337,7 @@ header {
 .salad-card-add-to-cart:hover {
   cursor: pointer;
   transform: scale(1.06);
-  background-color: #2b2a2a;
+  background-color: var(--hover-color-button);
 }
 
 .salad-card-add-to-cart:active {
@@ -372,7 +389,7 @@ header {
   flex: 1;
   gap: 28px;
   justify-content: flex-start;
-  background-color: #fffcf8;
+  background-color: var(--menu-card-bg);
   padding: 32px;
   animation: 0.8s ease-in-out 0s 1 slideInFromLeft3;
   --webkit-animation: 0.8s ease-in-out 0s 1 slideInFromLeft3;
@@ -396,8 +413,8 @@ header {
 .input {
   padding: 11px 16px;
   border-radius: 16px;
-  background-color: #f5f3f1;
-  color: #413e3e;
+  background-color: var(--input-bg);
+  color: var(--input-color);
   font-size: 0.8rem;
   border: 1px solid transparent;
   transition: border-color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1) 0s,
@@ -409,7 +426,7 @@ header {
   display: block;
   font-size: 0.9rem;
   font-weight: 600;
-  color: #05060f99;
+  color: var(--form-label-color);
   transition: color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1) 0s;
 }
 
@@ -417,12 +434,12 @@ header {
 .input:focus,
 .input-group:hover .input {
   outline: none;
-  border-color: #bbb;
+  border-color: var(--form-input-border-color-hover);
 }
 
 .input-group:hover .label,
 .input:focus {
-  color: #05060fc2;
+  color: var(--form-label-hover-color);
 }
 
 #message {
@@ -459,12 +476,12 @@ footer p {
   align-items: center;
   flex-wrap: wrap;
   gap: 5px;
-  color: #000;
+  color: var(--color);
 }
 
 footer a {
   text-decoration: none;
-  color: #555;
+  color: var(--footer-link-color);
 }
 
 footer a:hover {
