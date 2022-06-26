@@ -87,21 +87,52 @@ header {
 
 .header-right-elements {
   display: flex;
+  align-items: center;
   gap: 36px;
 }
 
-.header-right-elements * {
-  transition: all 0.2s ease-in-out;
+.header-icon {
   user-select: none;
+  background-color: unset;
+  height: 100%;
+  transition: all 0.2s ease-in-out;
 }
 
-.header-right-elements *:hover {
+.header-icon:hover {
   cursor: pointer;
+}
+
+/* Header Cart Icon */
+
+.cart-icon {
+  position: relative;
+}
+
+.cart-icon.cart-has-item::before {
+  content: attr(data-count);
+  position: absolute;
+  top: -17px;
+  right: -17px;
+  width: 21px;
+  height: 21px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background-color: #98ca3d;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.cart-icon.shake {
+  animation: shakeCart 0.4s ease-in-out forwards;
 }
 
 /* Header CTA Button */
 
-.order-now-button {
+.cta-button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -119,7 +150,7 @@ header {
   padding: 0;
 }
 
-.order-now-button:hover {
+.cta-button:hover {
   transition: all 0.2s ease-in-out;
   cursor: pointer;
   background-color: #2b2a2a;
@@ -154,20 +185,20 @@ header {
   --webkit-animation: 0.8s ease-in-out 0s 1 slideInFromLeftDescription;
 }
 
-.home-text .order-now-button {
+.home-cta-button {
   justify-content: space-between;
-  width: 168px;
+  width: 200px;
   padding: 0 26px;
   font-size: 0.98rem;
   animation: 0.75s ease-in-out 0s 1 slideInFromLeftButton;
   --webkit-animation: 0.85s ease-in-out 0s 1 slideInFromLeftButton;
 }
 
-.home-text .order-now-button > img {
+.home-cta-button > img {
   transition: transform 0.3s ease-in-out;
 }
 
-.home-text .order-now-button:hover img {
+.home-cta-button:hover img {
   transform: translateX(3px);
 }
 
@@ -399,5 +430,20 @@ footer a:hover {
   100% {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+@keyframes shakeCart {
+  25% {
+    transform: translateX(6px);
+  }
+  50% {
+    transform: translateX(-4px);
+  }
+  75% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
