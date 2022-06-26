@@ -53,11 +53,6 @@ header {
 
 .header-logo:hover {
   cursor: pointer;
-  transform: scale(1.04);
-}
-
-.header-logo:active {
-  transform: scale(0.97);
 }
 
 /* Header Tab Links */
@@ -126,28 +121,22 @@ header {
 
 .order-now-button:hover {
   transition: all 0.2s ease-in-out;
-  transform: scale(1.03);
   cursor: pointer;
   background-color: #2b2a2a;
 }
 
-.order-now-button:active {
-  transition: all 0.05s ease-in-out;
-  transform: scale(0.99);
-}
-
 /* -- Home -- */
 
-.hero {
+.home {
   display: flex;
   justify-content: space-between;
   gap: 54px;
   align-items: center;
 }
 
-/* Hero Text (Left Container) */
+/* Home Text (Left Container) */
 
-.hero-text {
+.home-text {
   display: flex;
   flex-direction: column;
   gap: 42px;
@@ -155,36 +144,36 @@ header {
 
 .headline {
   font-size: 3.5rem;
-  animation: 0.7s ease-in-out 0s 1 slideInFromLeftHeadline;
+  animation: 0.6s ease-in-out 0s 1 slideInFromLeftHeadline;
   --webkit-animation: 0.7s ease-in-out 0s 1 slideInFromLeftHeadline;
 }
 
-.hero-text p {
+.home-text p {
   font-size: 1.2rem;
-  animation: 0.8s ease-in-out 0s 1 slideInFromLeftDescription;
+  animation: 0.7s ease-in-out 0s 1 slideInFromLeftDescription;
   --webkit-animation: 0.8s ease-in-out 0s 1 slideInFromLeftDescription;
 }
 
-.hero-text .order-now-button {
+.home-text .order-now-button {
   justify-content: space-between;
   width: 168px;
   padding: 0 26px;
   font-size: 0.98rem;
-  animation: 0.85s ease-in-out 0s 1 slideInFromLeftButton;
+  animation: 0.75s ease-in-out 0s 1 slideInFromLeftButton;
   --webkit-animation: 0.85s ease-in-out 0s 1 slideInFromLeftButton;
 }
 
-.hero-text .order-now-button > img {
+.home-text .order-now-button > img {
   transition: transform 0.3s ease-in-out;
 }
 
-.hero-text .order-now-button:hover img {
+.home-text .order-now-button:hover img {
   transform: translateX(3px);
 }
 
-/* Hero Image */
+/* Home Image */
 
-.hero-image {
+.home-image {
   width: 36vw;
   max-width: 550px;
   -webkit-filter: drop-shadow(0 0 16px #555);
@@ -195,7 +184,7 @@ header {
   user-select: none;
 }
 
-.hero-image:hover {
+.home-image:hover {
   transform: translateY(-6px);
   -webkit-filter: drop-shadow(0 0 16px #555);
   filter: drop-shadow(0 0 16px #555);
@@ -311,20 +300,27 @@ header {
 /* -- Footer -- */
 
 footer {
-  display: block;
+  display: flex;
+  align-items: center;
   animation: 0.9s ease-in-out 0s 1 slideInFromBottomFooter;
   --webkit-animation: 0.9s ease-in-out 0s 1 slideInFromBottomFooter;
 }
 
 footer p {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   gap: 5px;
+  color: #555;
 }
 
 footer a {
-  color: #505050;
   text-decoration: none;
+  color: #000;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
 
 /* --Keyframes -- */
@@ -332,7 +328,7 @@ footer a {
 @keyframes slideInFromLeftHeadline {
   0% {
     opacity: 0;
-    transform: translateX(-9vw);
+    transform: translateX(-7vw);
   }
   100% {
     transform: translateX(0);
@@ -343,7 +339,7 @@ footer a {
 @keyframes slideInFromLeftDescription {
   0% {
     opacity: 0;
-    transform: translateX(-10vw);
+    transform: translateX(-8vw);
   }
   100% {
     transform: translateX(0);
@@ -353,7 +349,7 @@ footer a {
 
 @keyframes slideInFromLeftButton {
   0% {
-    transform: translateX(-11vw);
+    transform: translateX(-9vw);
     opacity: 0;
   }
   100% {

@@ -31,17 +31,28 @@ const removeSelectedTabClass = () => {
       link.classList.remove('selected-tab');
 };
 
+const addCtaEventListener = () => {
+  const ctaButton = document.querySelector('.home-text .order-now-button');
+  ctaButton.addEventListener('click', () => {
+    const tabLink = ctaButton.dataset.tabLink;
+    emptyContentDiv();
+    loadPage(tabLink);
+    removeSelectedTabClass();
+    addSelectedTabClass(tabLink);
+  });
+};
+
 const switchTab = () => {
   const tabLinks = document.querySelectorAll('.tab-link');
   for (const link of tabLinks) {
     link.addEventListener('click', () => {
-      console.log(tabLinks);
       if (link.classList.contains('selected-tab')) return;
       const clickedLink = link.dataset.tabLink;
       emptyContentDiv();
       loadPage(clickedLink);
       removeSelectedTabClass();
       addSelectedTabClass(clickedLink);
+      if (clickedLink === 'home') addCtaEventListener();
     });
   }
 };
@@ -50,3 +61,4 @@ loadHeader();
 loadHomePage();
 loadFooter();
 switchTab();
+addCtaEventListener();
