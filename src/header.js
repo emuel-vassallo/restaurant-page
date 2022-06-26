@@ -31,7 +31,6 @@ export const loadHeader = () => {
   searchButton.classList.add('header-icon');
   cartButton.classList.add('header-icon', 'cart-icon');
   ctaButton.classList.add('cta-button', 'tab-link');
-  
 
   logo.setAttribute('src', 'components/images/logo.png');
   logo.setAttribute('data-tab-link', 'home');

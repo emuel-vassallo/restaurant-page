@@ -34,7 +34,7 @@ const removeSelectedTabClass = () => {
 const updateCartOnClick = () => {
   const addToCartButtons = document.querySelectorAll('.salad-card-add-to-cart');
   const cartIcon = document.querySelector('.cart-icon');
-  const maxItemsInCart = 10;
+  const maxItemsInCart = 9;
   for (const button of addToCartButtons) {
     button.addEventListener('click', () => {
       const currentItemCount = parseInt(cartIcon.dataset.count);
