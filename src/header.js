@@ -21,7 +21,7 @@ export const loadHeader = () => {
 
   leftElementsContainer.classList.add('header-left-elements');
   rightElementsContainer.classList.add('header-right-elements');
-  logo.classList.add('header-logo');
+  logo.classList.add('header-logo', 'selected-tab', 'tab-link');
   tabLinks.classList.add('tab-links');
   homeLink.classList.add('selected-tab', 'tab-link', 'header-tab-link');
   menuLink.classList.add('tab-link', 'header-tab-link');
@@ -33,6 +33,7 @@ export const loadHeader = () => {
   cartIcon.setAttribute('src', 'components/icons/shopping-cart.svg');
 
   logo.setAttribute('src', 'components/images/logo.png');
+  logo.setAttribute('data-tab-link', 'home');
   homeLink.setAttribute('data-tab-link', 'home');
   menuLink.setAttribute('data-tab-link', 'menu');
   contactLink.setAttribute('data-tab-link', 'contact');

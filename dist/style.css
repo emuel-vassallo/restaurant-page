@@ -29,6 +29,7 @@ header {
   width: 100%;
   height: 116px;
   animation: 0.7s ease-in-out 0s 1 slideInFromTop;
+  --webkit-animation: 0.7s ease-in-out 0s 1 slideInFromTop;
   gap: 16px;
 }
 
@@ -42,13 +43,21 @@ header {
   height: 100%;
 }
 
+/* Header Logo */
+
 .header-logo {
   width: auto;
   height: 90%;
+  transition: all 0.2s ease-in-out;
 }
 
 .header-logo:hover {
   cursor: pointer;
+  transform: scale(1.04);
+}
+
+.header-logo:active {
+  transform: scale(0.97);
 }
 
 /* Header Tab Links */
@@ -79,7 +88,7 @@ header {
   border-bottom: 2px solid #000;
 }
 
-/* Header Buttons */
+/* Header Right Container */
 
 .header-right-elements {
   display: flex;
@@ -94,6 +103,8 @@ header {
 .header-right-elements *:hover {
   cursor: pointer;
 }
+
+/* Header CTA Button */
 
 .order-now-button {
   display: flex;
@@ -125,10 +136,6 @@ header {
   transform: scale(0.99);
 }
 
-.header-icon:hover {
-  fill: green;
-}
-
 /* -- Home -- */
 
 .hero {
@@ -137,6 +144,8 @@ header {
   gap: 54px;
   align-items: center;
 }
+
+/* Hero Text (Left Container) */
 
 .hero-text {
   display: flex;
@@ -147,11 +156,13 @@ header {
 .headline {
   font-size: 3.5rem;
   animation: 0.7s ease-in-out 0s 1 slideInFromLeftHeadline;
+  --webkit-animation: 0.7s ease-in-out 0s 1 slideInFromLeftHeadline;
 }
 
 .hero-text p {
   font-size: 1.2rem;
   animation: 0.8s ease-in-out 0s 1 slideInFromLeftDescription;
+  --webkit-animation: 0.8s ease-in-out 0s 1 slideInFromLeftDescription;
 }
 
 .hero-text .order-now-button {
@@ -160,6 +171,7 @@ header {
   padding: 0 26px;
   font-size: 0.98rem;
   animation: 0.85s ease-in-out 0s 1 slideInFromLeftButton;
+  --webkit-animation: 0.85s ease-in-out 0s 1 slideInFromLeftButton;
 }
 
 .hero-text .order-now-button > img {
@@ -170,12 +182,15 @@ header {
   transform: translateX(3px);
 }
 
+/* Hero Image */
+
 .hero-image {
   width: 36vw;
   max-width: 550px;
   -webkit-filter: drop-shadow(0 0 16px #555);
   filter: drop-shadow(0 0 16px #555);
   animation: 0.5s ease-in-out 0s 1 slideInFromRight;
+  --webkit-animation: 0.5s ease-in-out 0s 1 slideInFromRight;
   transition: transform 0.3s ease-in-out;
   user-select: none;
 }
@@ -200,7 +215,10 @@ header {
 
 .menu > h1 {
   animation: 0.4s ease-in-out 0s 1 slideInFromTopMenu;
+  --webkit-animation: 0.4s ease-in-out 0s 1 slideInFromTopMenu;
 }
+
+/* Menu Item Grid */
 
 .salad-grid {
   display: grid;
@@ -209,6 +227,8 @@ header {
   width: 100%;
   height: 100%;
 }
+
+/* Menu Item Card */
 
 .salad-card {
   display: flex;
@@ -224,6 +244,7 @@ header {
   outline: 1px solid #fffdfb;
   transition: all 0.3s ease-in-out;
   animation: 1s ease-in-out 0s 1 slideInFromTopMenu;
+  --webkit-animation: 1s ease-in-out 0s 1 slideInFromTopMenu;
 }
 
 .salad-card:hover {
@@ -292,6 +313,7 @@ header {
 footer {
   display: block;
   animation: 0.9s ease-in-out 0s 1 slideInFromBottomFooter;
+  --webkit-animation: 0.9s ease-in-out 0s 1 slideInFromBottomFooter;
 }
 
 footer p {
