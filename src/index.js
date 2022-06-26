@@ -2,6 +2,7 @@ import { loadHeader } from './header.js';
 import { loadHomePage } from './home.js';
 import { loadFooter } from './footer.js';
 import { loadMenuPage } from './menu.js';
+import { updateCartOnClick } from './menu.js';
 import { loadContactPage } from './contact.js';
 
 const emptyContentDiv = () => {
@@ -29,24 +30,6 @@ const removeSelectedTabClass = () => {
   for (const link of headerTabLinks)
     if (link.classList.contains('selected-tab'))
       link.classList.remove('selected-tab');
-};
-
-const updateCartOnClick = () => {
-  const addToCartButtons = document.querySelectorAll('.salad-card-add-to-cart');
-  const cartIcon = document.querySelector('.cart-icon');
-  const maxItemsInCart = 9;
-  for (const button of addToCartButtons) {
-    button.addEventListener('click', () => {
-      const currentItemCount = parseInt(cartIcon.dataset.count);
-      if (currentItemCount === maxItemsInCart) return;
-      cartIcon.dataset.count = currentItemCount + 1;
-      cartIcon.classList.add('cart-has-item');
-      cartIcon.classList.add('shake');
-      cartIcon.addEventListener('animationend', () =>
-        cartIcon.classList.remove('shake')
-      );
-    });
-  }
 };
 
 const loadNewTab = (clickedTabName) => {

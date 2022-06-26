@@ -60,11 +60,11 @@ export const loadMenuPage = () => {
   const menuContainer = document.createElement('div');
   const menuHeading = document.createElement('h1');
   const saladGrid = document.createElement('div');
- 
+
   menuContainer.classList.add('menu');
   saladGrid.classList.add('salad-grid');
 
-  const initalAnimationDuration = 0.15;
+  const initalAnimationDuration = 0.17;
   let animationDuration = initalAnimationDuration;
 
   for (const salad of menu) {
@@ -77,7 +77,7 @@ export const loadMenuPage = () => {
     const addToCartButton = document.createElement('button');
     const plusIcon = document.createElement('img');
 
-    menuHeading.classList.add('page-heading')
+    menuHeading.classList.add('page-heading');
     saladCard.classList.add('salad-card');
     saladImage.classList.add('salad-card-image');
     saladName.classList.add('salad-card-name');
@@ -86,17 +86,18 @@ export const loadMenuPage = () => {
     addToCartButton.classList.add('salad-card-add-to-cart');
     plusIcon.classList.add('salad-card-plus-icon');
 
-  menuHeading.textContent = 'Our Menu';
+    saladImage.src = salad.image;
+    plusIcon.src = 'components/icons/plus.svg';
+
+    menuHeading.textContent = 'Our Menu';
     saladName.textContent = salad.name;
     saladIngredients.textContent = salad.ingredients;
     saladPrice.textContent = `€${salad.price}`;
-    plusIcon.setAttribute('src', 'components/icons/plus.svg');
-    addToCartButton.append(plusIcon);
-    saladImage.setAttribute('src', salad.image);
 
     saladCard.style.animationDuration = `${animationDuration}s`;
     animationDuration += initalAnimationDuration;
 
+    addToCartButton.append(plusIcon);
     saladCard.append(
       saladImage,
       saladName,
@@ -110,4 +111,24 @@ export const loadMenuPage = () => {
 
   menuContainer.append(menuHeading, saladGrid);
   contentDiv.append(menuContainer);
+};
+
+export const updateCartOnClick = () => {
+  const addToCartButtons = document.querySelectorAll('.salad-card-add-to-cart');
+  const cartIcon = document.querySelector('.cart-icon');
+  for (const button of addToCartButtons) {
+    button.addEventListener('click', () => {
+      cartIcon.classList.add('shake');
+      cartIcon.addEventListener('animationend', () =>
+        cartIcon.classList.remove('shake')
+      );
+      const currentItemCount = parseInt(cartIcon.dataset.count);
+      if (currentItemCount >= 9) {
+        cartIcon.dataset.count = '9+';
+        return;
+      }
+      cartIcon.dataset.count = currentItemCount + 1;
+      cartIcon.classList.add('cart-has-item');
+    });
+  }
 };

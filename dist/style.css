@@ -111,17 +111,17 @@ header {
 .cart-icon.cart-has-item::before {
   content: attr(data-count);
   position: absolute;
-  top: -15px;
-  right: -15px;
+  top: -12px;
+  right: -12px;
   width: 21px;
   height: 21px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 3px solid #fffaf4;
+  border: 2px solid #fffaf4;
   border-radius: 50%;
   color: #fff;
-  background-color: #abd35f;
+  background-color: #d60846;
   font-weight: 600;
   font-size: 0.75rem;
   text-align: center;
@@ -132,14 +132,13 @@ header {
   --webkit-animation: shakeCart 0.4s ease-in-out forwards;
 }
 
-/* CTA Button */
+/* CTA and Form Button */
 
-.cta-button {
+.cta-button,
+.contact-form button {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 132px;
-  height: 48px;
   font-size: 0.9rem;
   color: #fff;
   background-color: #000;
@@ -152,16 +151,24 @@ header {
   padding: 0;
 }
 
-.cta-button:hover {
+.cta-button:hover,
+.contact-form button:hover {
   transition: all 0.2s ease-in-out;
   cursor: pointer;
   background-color: #2b2a2a;
 }
 
+/* CTA Button */
+
+.cta-button {
+  width: 132px;
+  height: 48px;
+}
+
 /* Page Heading */
 
 .page-heading {
-  animation: 0.4s ease-in-out 0s 1 slideInFromTopMenu;
+  animation: 0.5s ease-in-out 0s 1 slideInFromTopMenu;
   --webkit-animation: 0.4s ease-in-out 0s 1 slideInFromTopMenu;
 }
 
@@ -259,7 +266,7 @@ header {
   flex-direction: column;
   justify-content: center;
   gap: 11px;
-  background-color: #fffcf5;
+  background-color: #fffcf8;
   border-radius: 34px;
   box-shadow: 0px 6px 16px rgba(43, 8, 37, 0.1);
   width: 100%;
@@ -272,7 +279,7 @@ header {
 
 .salad-card:hover {
   transform: translateY(-4px);
-  background-color: #fffcf8;
+  background-color: #fcfaf8;
 }
 
 .salad-card-image {
@@ -344,34 +351,96 @@ header {
 }
 
 .contact > p {
-  animation: 0.5s ease-in-out 0s 1 slideInFromTopParagraph;
-  --webkit-animation: 0.5s ease-in-out 0s 1 slideInFromTopParagraph;
+  animation: 0.6s ease-in-out 0s 1 slideInFromTopParagraph;
+  --webkit-animation: 0.6s ease-in-out 0s 1 slideInFromTopParagraph;
 }
 
 .contact-container {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  min-height: 400px;
+  min-height: 404px;
   border-radius: 16px;
   overflow: hidden;
   perspective: 1px;
-  box-shadow: 0 0 32px rgba(43, 8, 37, 0.05);
+  box-shadow: 0px 6px 16px rgba(43, 8, 37, 0.1);
 }
 
 .contact-form {
   display: flex;
+  flex-direction: column;
   flex: 1;
-  background-color: #fffcf5;
-  padding: 18px 32px;
-  animation: 0.5s ease-in-out 0s 1 slideInFromLeft3;
-  --webkit-animation: 0.4s ease-in-out 0s 1 slideInFromLeft3;
+  gap: 28px;
+  justify-content: flex-start;
+  background-color: #fffcf8;
+  padding: 32px;
+  animation: 0.8s ease-in-out 0s 1 slideInFromLeft3;
+  --webkit-animation: 0.8s ease-in-out 0s 1 slideInFromLeft3;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  animation: 0.16s ease-in-out 0s 1 slideInFromTopMenu;
+  --webkit-animation: 0.05s ease-in-out 0s 1 slideInFromTopMenu;
+}
+
+.form-user-name-div {
+  display: flex;
+  gap: 26px;
+  width: 100%;
+}
+
+.input {
+  padding: 11px 16px;
+  border-radius: 16px;
+  background-color: #f5f3f1;
+  color: #413e3e;
+  font-size: 0.8rem;
+  border: 1px solid transparent;
+  transition: border-color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1) 0s,
+    color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1) 0s,
+    background 0.2s cubic-bezier(0.25, 0.01, 0.25, 1) 0s;
+}
+
+.contact-form label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #05060f99;
+  transition: color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1) 0s;
+}
+
+.input:hover,
+.input:focus,
+.input-group:hover .input {
+  outline: none;
+  border-color: #bbb;
+}
+
+.input-group:hover .label,
+.input:focus {
+  color: #05060fc2;
+}
+
+#message {
+  resize: none;
+  width: 100%;
+}
+
+.contact-form button {
+  width: 106px;
+  height: 42px;
+  animation: 0.95s ease-in-out 0s 1 slideInFromTopParagraph;
+  --webkit-animation: 0.95s ease-in-out 0s 1 slideInFromTopParagraph;
 }
 
 .map {
   flex: 1;
-  animation: 0.5s ease-in-out 0s 1 slideInFromRight;
-  --webkit-animation: 0.4s ease-in-out 0s 1 slideInFromRight;
+  animation: 0.6s ease-in-out 0s 1 slideInFromRight;
+  --webkit-animation: 0.6s ease-in-out 0s 1 slideInFromRight;
 }
 
 /* -- Footer -- */
@@ -390,12 +459,12 @@ footer p {
   align-items: center;
   flex-wrap: wrap;
   gap: 5px;
-  color: #555;
+  color: #000;
 }
 
 footer a {
   text-decoration: none;
-  color: #000;
+  color: #555;
 }
 
 footer a:hover {

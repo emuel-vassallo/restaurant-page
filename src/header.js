@@ -32,14 +32,17 @@ export const loadHeader = () => {
   cartButton.classList.add('header-icon', 'cart-icon');
   ctaButton.classList.add('cta-button', 'tab-link');
 
-  logo.setAttribute('src', 'components/images/logo.png');
+  logo.src = 'components/images/logo.png';
+  searchIcon.src = 'components/icons/search.svg';
+  cartButton.title = 'Your Cart';
+  searchIcon.title = 'Search';
+  cartIcon.src = 'components/icons/shopping-cart.svg';
+
   logo.setAttribute('data-tab-link', 'home');
   homeLink.setAttribute('data-tab-link', 'home');
   menuLink.setAttribute('data-tab-link', 'menu');
   contactLink.setAttribute('data-tab-link', 'contact');
   cartButton.setAttribute('data-count', 0);
-  searchIcon.setAttribute('src', 'components/icons/search.svg');
-  cartIcon.setAttribute('src', 'components/icons/shopping-cart.svg');
   ctaButton.setAttribute('data-tab-link', 'menu');
 
   homeLink.textContent = 'home';
