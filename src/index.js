@@ -31,16 +31,35 @@ const removeSelectedTabClass = () => {
       link.classList.remove('selected-tab');
 };
 
+const updateCartOnClick = () => {
+  const addToCartButtons = document.querySelectorAll('.salad-card-add-to-cart');
+  const cartIcon = document.querySelector('.cart-icon');
+  const maxItemsInCart = 10;
+  for (const button of addToCartButtons) {
+    button.addEventListener('click', () => {
+      const currentItemCount = parseInt(cartIcon.dataset.count);
+      if (currentItemCount === maxItemsInCart) return;
+      cartIcon.dataset.count = currentItemCount + 1;
+      cartIcon.classList.add('cart-has-item');
+      cartIcon.classList.add('shake');
+      cartIcon.addEventListener('animationend', () =>
+        cartIcon.classList.remove('shake')
+      );
+    });
+  }
+};
+
 const loadNewTab = (clickedTabName) => {
   const tabLink = clickedTabName.dataset.tabLink;
   emptyContentDiv();
   loadPage(tabLink);
   removeSelectedTabClass();
   addSelectedTabClass(tabLink);
+  if (tabLink === 'menu') updateCartOnClick();
 };
 
 const addCtaEventListener = () => {
-  const ctaButton = document.querySelector('.home-text .order-now-button');
+  const ctaButton = document.querySelector('.home-cta-button');
   ctaButton.addEventListener('click', () => loadNewTab(ctaButton));
 };
 
@@ -50,7 +69,8 @@ const switchTabOnClick = () => {
     link.addEventListener('click', () => {
       if (link.classList.contains('selected-tab')) return;
       loadNewTab(link);
-      if (link.dataset.tabLink === 'home') addCtaEventListener();
+      const tabLink = link.dataset.tabLink;
+      if (tabLink === 'home') addCtaEventListener();
     });
   }
 };

@@ -15,8 +15,10 @@ export const loadHeader = () => {
   const contactLink = document.createElement('a');
 
   const rightElementsContainer = document.createElement('div');
-  const orderNowButton = document.createElement('button');
+  const ctaButton = document.createElement('button');
+  const searchButton = document.createElement('button');
   const searchIcon = document.createElement('img');
+  const cartButton = document.createElement('button');
   const cartIcon = document.createElement('img');
 
   leftElementsContainer.classList.add('header-left-elements');
@@ -26,30 +28,34 @@ export const loadHeader = () => {
   homeLink.classList.add('selected-tab', 'tab-link', 'header-tab-link');
   menuLink.classList.add('tab-link', 'header-tab-link');
   contactLink.classList.add('tab-link', 'header-tab-link');
-  searchIcon.classList.add('header-icon');
-  cartIcon.classList.add('header-icon');
-  orderNowButton.classList.add('order-now-button', 'tab-link');
-  searchIcon.setAttribute('src', 'components/icons/search.svg');
-  cartIcon.setAttribute('src', 'components/icons/shopping-cart.svg');
+  searchButton.classList.add('header-icon');
+  cartButton.classList.add('header-icon', 'cart-icon');
+  ctaButton.classList.add('cta-button', 'tab-link');
+  
 
   logo.setAttribute('src', 'components/images/logo.png');
   logo.setAttribute('data-tab-link', 'home');
   homeLink.setAttribute('data-tab-link', 'home');
   menuLink.setAttribute('data-tab-link', 'menu');
   contactLink.setAttribute('data-tab-link', 'contact');
-  orderNowButton.setAttribute('data-tab-link', 'menu');
+  cartButton.setAttribute('data-count', 0);
+  searchIcon.setAttribute('src', 'components/icons/search.svg');
+  cartIcon.setAttribute('src', 'components/icons/shopping-cart.svg');
+  ctaButton.setAttribute('data-tab-link', 'menu');
 
   homeLink.textContent = 'home';
   menuLink.textContent = 'menu';
   contactLink.textContent = 'contact';
-  orderNowButton.textContent = 'order now';
+  ctaButton.textContent = 'order now';
 
   homeLinkListItem.append(homeLink);
   menuLinkListItem.append(menuLink);
   contactLinkListItem.append(contactLink);
   tabLinks.append(homeLinkListItem, menuLinkListItem, contactLinkListItem);
   leftElementsContainer.append(logo, tabLinks);
-  rightElementsContainer.append(searchIcon, cartIcon, orderNowButton);
+  searchButton.append(searchIcon);
+  cartButton.append(cartIcon);
+  rightElementsContainer.append(searchButton, cartButton, ctaButton);
 
   headerContainer.append(leftElementsContainer, rightElementsContainer);
 };
