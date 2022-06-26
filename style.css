@@ -332,7 +332,9 @@ header {
 
 footer {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  justify-content: flex-start;
+  height: 116px;
   animation: 0.9s ease-in-out 0s 1 slideInFromBottomFooter;
   --webkit-animation: 0.9s ease-in-out 0s 1 slideInFromBottomFooter;
 }
