@@ -17,7 +17,7 @@ export const loadHomePage = () => {
 
   headline.textContent = 'Salads with freshness in every bite!';
   homeParagraph.textContent =
-    "Hungry and craving some tasty and nutritious salads? We've got your back!";
+    "Hungry and craving some tasty and nutritious salads? We've got you!";
   ctaButton.textContent = 'discover menu';
 
   arrowRightIcon.setAttribute('src', 'components/icons/arrow-right.svg');
