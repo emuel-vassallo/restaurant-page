@@ -31,28 +31,26 @@ const removeSelectedTabClass = () => {
       link.classList.remove('selected-tab');
 };
 
-const addCtaEventListener = () => {
-  const ctaButton = document.querySelector('.home-text .order-now-button');
-  ctaButton.addEventListener('click', () => {
-    const tabLink = ctaButton.dataset.tabLink;
-    emptyContentDiv();
-    loadPage(tabLink);
-    removeSelectedTabClass();
-    addSelectedTabClass(tabLink);
-  });
+const loadNewTab = (clickedTabName) => {
+  const tabLink = clickedTabName.dataset.tabLink;
+  emptyContentDiv();
+  loadPage(tabLink);
+  removeSelectedTabClass();
+  addSelectedTabClass(tabLink);
 };
 
-const switchTab = () => {
+const addCtaEventListener = () => {
+  const ctaButton = document.querySelector('.home-text .order-now-button');
+  ctaButton.addEventListener('click', () => loadNewTab(ctaButton));
+};
+
+const switchTabOnClick = () => {
   const tabLinks = document.querySelectorAll('.tab-link');
   for (const link of tabLinks) {
     link.addEventListener('click', () => {
       if (link.classList.contains('selected-tab')) return;
-      const clickedLink = link.dataset.tabLink;
-      emptyContentDiv();
-      loadPage(clickedLink);
-      removeSelectedTabClass();
-      addSelectedTabClass(clickedLink);
-      if (clickedLink === 'home') addCtaEventListener();
+      loadNewTab(link);
+      if (link.dataset.tabLink === 'home') addCtaEventListener();
     });
   }
 };
@@ -60,5 +58,5 @@ const switchTab = () => {
 loadHeader();
 loadHomePage();
 loadFooter();
-switchTab();
+switchTabOnClick();
 addCtaEventListener();
