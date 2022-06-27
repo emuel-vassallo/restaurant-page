@@ -16,7 +16,11 @@ export const loadHeader = () => {
 
   const rightElementsContainer = document.createElement('div');
   const ctaButton = document.createElement('button');
-  const themeToggleButton = document.createElement('input');
+
+  const themeToggleSwitch = document.createElement('label');
+  const themeToggleCheckbox = document.createElement('input');
+  const themeToggleSlider = document.createElement('span');
+
   const cartButton = document.createElement('button');
   const cartIcon = document.createElement('img');
 
@@ -27,19 +31,22 @@ export const loadHeader = () => {
   homeLink.classList.add('selected-tab', 'tab-link', 'header-tab-link');
   menuLink.classList.add('tab-link', 'header-tab-link');
   contactLink.classList.add('tab-link', 'header-tab-link');
-  themeToggleButton.classList.add('dark-theme-toggler');
+  themeToggleSwitch.classList.add('switch');
+  themeToggleCheckbox.classList.add('dark-theme-toggler');
+  themeToggleSlider.classList.add('slider');
   cartButton.classList.add('header-icon', 'cart-icon');
   ctaButton.classList.add('cta-button', 'tab-link');
 
   logo.src = 'components/images/logo.png';
   cartIcon.src = 'components/icons/shopping-cart.svg';
   cartButton.title = 'Your Cart';
-  themeToggleButton.type = 'checkbox';
+  themeToggleSwitch.title = 'Toggle theme';
+  themeToggleCheckbox.type = 'checkbox';
   if (
     window.matchMedia &&
     window.matchMedia('(prefers-color-scheme: dark)').matches
   )
-    themeToggleButton.checked = true;
+    themeToggleCheckbox.checked = true;
 
   logo.setAttribute('data-tab-link', 'home');
   homeLink.setAttribute('data-tab-link', 'home');
@@ -58,8 +65,9 @@ export const loadHeader = () => {
   contactLinkListItem.append(contactLink);
   tabLinks.append(homeLinkListItem, menuLinkListItem, contactLinkListItem);
   leftElementsContainer.append(logo, tabLinks);
+  themeToggleSwitch.append(themeToggleCheckbox, themeToggleSlider);
   cartButton.append(cartIcon);
-  rightElementsContainer.append(themeToggleButton, cartButton, ctaButton);
+  rightElementsContainer.append(themeToggleSwitch, cartButton, ctaButton);
 
   headerContainer.append(leftElementsContainer, rightElementsContainer);
 };
