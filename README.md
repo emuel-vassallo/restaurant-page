@@ -8,15 +8,33 @@ A simple restaurant page for a ficticious salad bar. It utilizes Webpack for mod
 
 ### Home
 
-![home page screenshot](dist/components/screenshots/home-page-screenshot.png)
+#### Light Theme
+
+![home page light theme screenshot](dist/components/screenshots/home-light.png)
+
+#### Dark Theme
+
+![home page dark theme screenshot](dist/components/screenshots/home-dark.png)
 
 ### Menu
 
-![menu page screenshot](dist/components/screenshots/menu-page-screenshot.png)
+#### Light Theme
+
+![menu page light theme screenshot](dist/components/screenshots/menu-light.png)
+
+#### Dark Theme
+
+![menu page dark theme screenshot](dist/components/screenshots/menu-dark.png)
 
 ### Contact
 
-![contact page screenshot](dist/components/screenshots/contact-page-screenshot.png)
+#### Light Theme
+
+![contact page light theme screenshot](dist/components/screenshots/contact-light.png)
+
+#### Dark Theme
+
+![contact page dark theme screenshot](dist/components/screenshots/contact-dark.png)
 
 ## Built With
 
