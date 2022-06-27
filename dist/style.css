@@ -8,17 +8,18 @@
   --hover-color-button: #2b2a2a;
   --cta-button-bg: #000;
   --button-color: #fff;
-  --cart-item-count-bg: #d60846;
-  --menu-card-bg: #fffcf8;
-  --menu-card-hover-bg: #fdfdfc;
+  --cart-item-count-bg: #cb3447;
+  --menu-card-bg: #fffcf9;
+  --menu-card-hover-bg: #fff;
   --image-drop-shadow: drop-shadow(0 0 16px #555);
-  --form-input-bg: #f4f0f0;
+  --form-input-bg: #efefea;
   --form-input-color: #413e3e;
   --form-label-color: #05060f99;
   --form-input-border-color-hover: #bbb;
   --form-label-hover-color: #05060fc2;
   --footer-link-color: #555;
   --theme-slider-bg: #d8d8cd;
+  --theme-slider-hover-bg: #e1e1d9;
   --theme-switch-bg: #fffaf4;
 }
 
@@ -27,20 +28,21 @@ body.dark-theme {
   --color: #fff;
   --tab-links-color: #fff;
   --hover-color: #c5c5c5;
-  --cta-button-bg: #6d8019;
-  --hover-color-button: #80951d;
+  --cta-button-bg: #6f8133;
+  --hover-color-button: #879e3f;
   --button-color: #fff;
-  --cart-item-count-bg: #d60846;
+  --cart-item-count-bg: #cd3244;
   --menu-card-bg: #1f1f1f;
-  --menu-card-hover-bg: #222;
+  --menu-card-hover-bg: #242424;
   --image-drop-shadow: drop-shadow(0 0 16px #404040);
-  --form-input-bg: #282828;
+  --form-input-bg: #292929;
   --form-input-color: #fff;
   --form-label-color: #cecece;
   --form-input-border-color-hover: #aaa;
   --form-label-hover-color: #fff;
   --footer-link-color: #aaa;
   --theme-slider-bg: #303030;
+  --theme-slider-hover-bg: #363636;
   --theme-switch-bg: #141414;
 }
 
@@ -95,8 +97,11 @@ header {
   transition: all 0.2s ease-in-out;
 }
 
-.header-logo:hover {
+.header-logo:hover,
+.cart-icon:hover {
   cursor: pointer;
+  transform: translateY(-2px);
+  filter: brightness(1.15);
 }
 
 /* Header Tab Links */
@@ -152,8 +157,8 @@ header {
   grid-row: 1;
   grid-column: 3;
   justify-self: flex-end;
-  width: 50px;
-  height: 23px;
+  width: 52px;
+  height: 24px;
 }
 
 .switch input {
@@ -174,7 +179,11 @@ header {
   border-radius: 12px;
 }
 
-.slider:before {
+.slider:hover {
+  background-color: var(--theme-slider-hover-bg);
+}
+
+.slider::before {
   position: absolute;
   content: '';
   height: 16px;
@@ -191,7 +200,11 @@ header {
   background-color: var(--theme-slider-bg);
 }
 
-.switch input:checked + .slider:before {
+.switch input:checked + .slider:hover {
+  background-color: var(--theme-slider-hover-bg);
+}
+
+.switch input:checked + .slider::before {
   left: calc(100% - (22px));
   background-color: var(--theme-switch-bg);
 }
@@ -207,8 +220,8 @@ header {
   position: absolute;
   top: -13px;
   right: -13px;
-  width: 21px;
-  height: 21px;
+  width: 20px;
+  height: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -217,7 +230,7 @@ header {
   color: var(--button-color);
   background-color: var(--cart-item-count-bg);
   font-weight: 600;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   text-align: center;
 }
 
@@ -293,8 +306,8 @@ header {
 
 .home-cta-button {
   justify-content: space-between;
-  width: 204px;
-  padding: 0 26px;
+  width: 210px;
+  padding: 0 30px;
   font-size: 0.98rem;
   animation: 0.75s ease-in-out 0s 1 slideInFromLeft3;
 }
@@ -304,7 +317,7 @@ header {
 }
 
 .home-cta-button:hover img {
-  transform: translateX(3px);
+  transform: translateX(5px);
 }
 
 /* Home Image */
@@ -364,13 +377,14 @@ header {
 .salad-card:hover {
   transform: translateY(-4px);
   background-color: var(--menu-card-hover-bg);
+  filter: brightness(1.01);
 }
 
 .salad-card-image {
   width: 65%;
   height: auto;
   align-self: center;
-  transition: transform 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   filter: var(--image-drop-shadow);
 }
 
@@ -392,17 +406,17 @@ header {
   align-items: center;
   justify-content: center;
   background-color: var(--cta-button-bg);
-  width: 45px;
-  height: 45px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
   align-self: center;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
   box-shadow: 0 0.5rem 1rem rgba(143, 142, 142, 0.15);
 }
 
 .salad-card-add-to-cart:hover {
   cursor: pointer;
-  transform: scale(1.06);
+  transform: scale(1.07);
   background-color: var(--hover-color-button);
 }
 
@@ -455,7 +469,7 @@ header {
   gap: 28px;
   justify-content: flex-start;
   background-color: var(--menu-card-bg);
-  padding: 32px;
+  padding: 34px;
   animation: 0.8s ease-in-out 0s 1 slideInFromLeft3;
 }
 
@@ -640,13 +654,13 @@ footer a:hover {
 
 @keyframes shakeCart {
   25% {
-    transform: translateX(6px);
+    transform: translateX(11px);
   }
   50% {
-    transform: translateX(-4px);
+    transform: translateX(-9px);
   }
   75% {
-    transform: translateX(2px);
+    transform: translateX(7px);
   }
   100% {
     transform: translateX(0);

@@ -38,7 +38,7 @@ export const loadHeader = () => {
   ctaButton.classList.add('cta-button', 'tab-link');
 
   logo.src = 'components/images/logo.png';
-  cartIcon.src = 'components/icons/shopping-cart.svg';
+  cartIcon.src = 'components/icons/black-shopping-bag.svg';
   cartButton.title = 'Your Cart';
   themeToggleSwitch.title = 'Toggle theme';
   themeToggleCheckbox.type = 'checkbox';
@@ -79,11 +79,11 @@ const changeIconsColor = (isThemeDark) => {
   const headerLogo = document.querySelector('.header-logo');
   if (isThemeDark) {
     headerLogo.src = 'components/images/logo-dark-mode.png';
-    cartIcon.src = 'components/icons/white-shopping-cart.svg';
+    cartIcon.src = 'components/icons/white-shopping-bag.svg';
     return;
   }
   headerLogo.src = 'components/images/logo.png';
-  cartIcon.src = 'components/icons/shopping-cart.svg';
+  cartIcon.src = 'components/icons/black-shopping-bag.svg';
 };
 
 export const toggleDarkTheme = () => {
