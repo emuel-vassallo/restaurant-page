@@ -1,4 +1,4 @@
-import { loadHeader } from './header.js';
+import { loadHeader, toggleDarkTheme } from './header.js';
 import { loadHomePage } from './home.js';
 import { loadFooter } from './footer.js';
 import { loadMenuPage } from './menu.js';
@@ -63,3 +63,4 @@ loadHomePage();
 loadFooter();
 switchTabOnClick();
 addCtaEventListener();
+toggleDarkTheme();

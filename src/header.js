@@ -16,8 +16,7 @@ export const loadHeader = () => {
 
   const rightElementsContainer = document.createElement('div');
   const ctaButton = document.createElement('button');
-  const searchButton = document.createElement('button');
-  const searchIcon = document.createElement('img');
+  const themeToggleButton = document.createElement('input');
   const cartButton = document.createElement('button');
   const cartIcon = document.createElement('img');
 
@@ -28,15 +27,19 @@ export const loadHeader = () => {
   homeLink.classList.add('selected-tab', 'tab-link', 'header-tab-link');
   menuLink.classList.add('tab-link', 'header-tab-link');
   contactLink.classList.add('tab-link', 'header-tab-link');
-  searchButton.classList.add('header-icon');
+  themeToggleButton.classList.add('dark-theme-toggler');
   cartButton.classList.add('header-icon', 'cart-icon');
   ctaButton.classList.add('cta-button', 'tab-link');
 
   logo.src = 'components/images/logo.png';
-  searchIcon.src = 'components/icons/search.svg';
-  cartButton.title = 'Your Cart';
-  searchIcon.title = 'Search';
   cartIcon.src = 'components/icons/shopping-cart.svg';
+  cartButton.title = 'Your Cart';
+  themeToggleButton.type = 'checkbox';
+  if (
+    window.matchMedia &&
+    window.matchMedia('(prefers-color-scheme: dark)').matches
+  )
+    themeToggleButton.checked = true;
 
   logo.setAttribute('data-tab-link', 'home');
   homeLink.setAttribute('data-tab-link', 'home');
@@ -55,9 +58,38 @@ export const loadHeader = () => {
   contactLinkListItem.append(contactLink);
   tabLinks.append(homeLinkListItem, menuLinkListItem, contactLinkListItem);
   leftElementsContainer.append(logo, tabLinks);
-  searchButton.append(searchIcon);
   cartButton.append(cartIcon);
-  rightElementsContainer.append(searchButton, cartButton, ctaButton);
+  rightElementsContainer.append(themeToggleButton, cartButton, ctaButton);
 
   headerContainer.append(leftElementsContainer, rightElementsContainer);
+};
+
+const toggleBodyClass = () => document.body.classList.toggle('dark-theme');
+
+const changeIconsColor = (isThemeDark) => {
+  const cartIcon = document.querySelector('.cart-icon img');
+  const headerLogo = document.querySelector('.header-logo');
+  if (isThemeDark) {
+    headerLogo.src = 'components/images/logo-dark-mode.png';
+    cartIcon.src = 'components/icons/white-shopping-cart.svg';
+    return;
+  }
+  headerLogo.src = 'components/images/logo.png';
+  cartIcon.src = 'components/icons/shopping-cart.svg';
+};
+
+export const toggleDarkTheme = () => {
+  const toggleButton = document.querySelector('.dark-theme-toggler');
+  if (toggleButton.checked) {
+    toggleBodyClass();
+    changeIconsColor(true);
+  }
+  toggleButton.addEventListener('click', () => {
+    toggleBodyClass();
+    if (toggleButton.checked) {
+      changeIconsColor(true);
+      return;
+    }
+    changeIconsColor(false);
+  });
 };

@@ -2,19 +2,42 @@
 
 :root {
   --bg: #fffaf4;
-  --color: #000000;
+  --color: #000;
+  --tab-links-color: #000;
   --hover-color: #464646;
   --hover-color-button: #2b2a2a;
-  --button-color: #ffffff;
+  --cta-button-bg: #000;
+  --button-color: #fff;
   --cart-item-count-bg: #d60846;
   --menu-card-bg: #fffcf8;
-  --menu-card-hover-bg: #fcfaf8;
-  --input-bg: #f5f3f1;
-  --input-color: #413e3e;
+  --menu-card-hover-bg: #fdfdfc;
+  --image-drop-shadow: drop-shadow(0 0 16px #555);
+  --form-input-bg: #f4f0f0;
+  --form-input-color: #413e3e;
   --form-label-color: #05060f99;
-  --form-input-border-color-hover: #bbbbbb;
+  --form-input-border-color-hover: #bbb;
   --form-label-hover-color: #05060fc2;
-  --footer-link-color: #555555;
+  --footer-link-color: #555;
+}
+
+body.dark-theme {
+  --bg: #171717;
+  --color: #fff;
+  --tab-links-color: #fff;
+  --hover-color: #c5c5c5;
+  --cta-button-bg: #6d8019;
+  --hover-color-button: #80951d;
+  --button-color: #fff;
+  --cart-item-count-bg: #d60846;
+  --menu-card-bg: #1f1f1f;
+  --menu-card-hover-bg: #222;
+  --image-drop-shadow: drop-shadow(0 0 16px #404040);
+  --form-input-bg: #282828;
+  --form-input-color: #fff;
+  --form-label-color: #cecece;
+  --form-input-border-color-hover: #aaa;
+  --form-label-hover-color: #fff;
+  --footer-link-color: #aaa;
 }
 
 * {
@@ -35,6 +58,7 @@ body {
   color: var(--color);
   padding: 16px 18vw;
   min-height: 100vh;
+  transition: background-color 0.3s ease-in-out;
 }
 
 /* -- Header -- */
@@ -46,7 +70,6 @@ header {
   width: 100%;
   height: 116px;
   animation: 0.7s ease-in-out 0s 1 slideInFromTop;
-  --webkit-animation: 0.7s ease-in-out 0s 1 slideInFromTop;
   gap: 16px;
 }
 
@@ -82,7 +105,7 @@ header {
 
 .header-tab-link {
   text-decoration: none;
-  color: black;
+  color: var(--tab-links-color);
   font-size: 1rem;
   text-transform: capitalize;
   font-weight: 600;
@@ -105,7 +128,7 @@ header {
 .header-right-elements {
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: 38px;
 }
 
 .header-icon {
@@ -128,25 +151,24 @@ header {
 .cart-icon.cart-has-item::before {
   content: attr(data-count);
   position: absolute;
-  top: -12px;
-  right: -12px;
+  top: -13px;
+  right: -13px;
   width: 21px;
   height: 21px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid var(--bg);
   border-radius: 50%;
+  border: 2px solid var(--bg);
   color: var(--button-color);
   background-color: var(--cart-item-count-bg);
   font-weight: 600;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   text-align: center;
 }
 
 .cart-icon.shake {
   animation: shakeCart 0.4s ease-in-out forwards;
-  --webkit-animation: shakeCart 0.4s ease-in-out forwards;
 }
 
 /* CTA and Form Button */
@@ -158,7 +180,7 @@ header {
   justify-content: center;
   font-size: 0.9rem;
   color: var(--button-color);
-  background-color: var(--color);
+  background-color: var(--cta-button-bg);
   border-radius: 26px;
   font-weight: 600;
   text-transform: capitalize;
@@ -186,7 +208,6 @@ header {
 
 .page-heading {
   animation: 0.5s ease-in-out 0s 1 slideInFromTopMenu;
-  --webkit-animation: 0.4s ease-in-out 0s 1 slideInFromTopMenu;
 }
 
 /* -- Home -- */
@@ -209,13 +230,11 @@ header {
 .headline {
   font-size: 3.5rem;
   animation: 0.6s ease-in-out 0s 1 slideInFromLeft1;
-  --webkit-animation: 0.7s ease-in-out 0s 1 slideInFromLeft1;
 }
 
 .home-text p {
   font-size: 1.2rem;
   animation: 0.7s ease-in-out 0s 1 slideInFromLeft2;
-  --webkit-animation: 0.8s ease-in-out 0s 1 slideInFromLeft2;
 }
 
 .home-cta-button {
@@ -224,7 +243,6 @@ header {
   padding: 0 26px;
   font-size: 0.98rem;
   animation: 0.75s ease-in-out 0s 1 slideInFromLeft3;
-  --webkit-animation: 0.85s ease-in-out 0s 1 slideInFromLeft3;
 }
 
 .home-cta-button > img {
@@ -240,18 +258,14 @@ header {
 .home-image {
   width: 36vw;
   max-width: 550px;
-  -webkit-filter: drop-shadow(0 0 16px #555);
-  filter: drop-shadow(0 0 16px #555);
   animation: 0.5s ease-in-out 0s 1 slideInFromRight;
-  --webkit-animation: 0.5s ease-in-out 0s 1 slideInFromRight;
   transition: transform 0.3s ease-in-out;
   user-select: none;
+  filter: var(--image-drop-shadow);
 }
 
 .home-image:hover {
   transform: translateY(-6px);
-  -webkit-filter: drop-shadow(0 0 16px #555);
-  filter: drop-shadow(0 0 16px #555);
 }
 
 /* -- Menu -- */
@@ -291,21 +305,19 @@ header {
   padding: 18px 32px;
   transition: all 0.3s ease-in-out;
   animation: 1s ease-in-out 0s 1 slideInFromTopMenu;
-  --webkit-animation: 1s ease-in-out 0s 1 slideInFromTopMenu;
 }
 
 .salad-card:hover {
   transform: translateY(-4px);
-  background-color: var(--cart-item-count-hover-bg);
+  background-color: var(--menu-card-hover-bg);
 }
 
 .salad-card-image {
   width: 65%;
   height: auto;
-  -webkit-filter: drop-shadow(0 0 16px #aaa);
-  filter: drop-shadow(0 0 16px #aaa);
   align-self: center;
   transition: transform 0.3s ease-in-out;
+  filter: var(--image-drop-shadow);
 }
 
 .salad-card:hover .salad-card-image {
@@ -325,7 +337,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color);
+  background-color: var(--cta-button-bg);
   width: 45px;
   height: 45px;
   border-radius: 50%;
@@ -369,7 +381,6 @@ header {
 
 .contact > p {
   animation: 0.6s ease-in-out 0s 1 slideInFromTopParagraph;
-  --webkit-animation: 0.6s ease-in-out 0s 1 slideInFromTopParagraph;
 }
 
 .contact-container {
@@ -392,7 +403,6 @@ header {
   background-color: var(--menu-card-bg);
   padding: 32px;
   animation: 0.8s ease-in-out 0s 1 slideInFromLeft3;
-  --webkit-animation: 0.8s ease-in-out 0s 1 slideInFromLeft3;
 }
 
 .input-group {
@@ -401,7 +411,6 @@ header {
   gap: 10px;
   flex: 1;
   animation: 0.16s ease-in-out 0s 1 slideInFromTopMenu;
-  --webkit-animation: 0.05s ease-in-out 0s 1 slideInFromTopMenu;
 }
 
 .form-user-name-div {
@@ -413,8 +422,8 @@ header {
 .input {
   padding: 11px 16px;
   border-radius: 16px;
-  background-color: var(--input-bg);
-  color: var(--input-color);
+  background-color: var(--form-input-bg);
+  color: var(--form-input-color);
   font-size: 0.8rem;
   border: 1px solid transparent;
   transition: border-color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1) 0s,
@@ -451,13 +460,11 @@ header {
   width: 106px;
   height: 42px;
   animation: 0.95s ease-in-out 0s 1 slideInFromTopParagraph;
-  --webkit-animation: 0.95s ease-in-out 0s 1 slideInFromTopParagraph;
 }
 
 .map {
   flex: 1;
   animation: 0.6s ease-in-out 0s 1 slideInFromRight;
-  --webkit-animation: 0.6s ease-in-out 0s 1 slideInFromRight;
 }
 
 /* -- Footer -- */
@@ -468,7 +475,6 @@ footer {
   justify-content: flex-start;
   height: 116px;
   animation: 0.9s ease-in-out 0s 1 slideInFromBottomFooter;
-  --webkit-animation: 0.9s ease-in-out 0s 1 slideInFromBottomFooter;
 }
 
 footer p {
